@@ -52,7 +52,7 @@
                 return;
             }
 
-            int transitTo = wizard.Items.IndexOf(this);
+            int transitTo = wizard.SummaryControls.IndexOf(this);
 
             if (wizard.CurrentStepIndex != transitTo)
             {
