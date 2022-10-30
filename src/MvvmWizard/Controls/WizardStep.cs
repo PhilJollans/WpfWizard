@@ -11,13 +11,12 @@ namespace MvvmWizard.Controls
     /// <summary>
     /// The wizard step.
     /// </summary>
-    public partial class WizardStep : ButtonBase
+    public partial class WizardStep : ContentControl
     {
         public static readonly DependencyProperty ViewTypeProperty = DependencyProperty.Register(nameof(ViewType), typeof(Type), typeof(WizardStep));
         public static readonly DependencyProperty UnderlyingDataContextProperty = DependencyProperty.Register(nameof(UnderlyingDataContext), typeof(object), typeof(WizardStep));
 
-        public static readonly DependencyProperty IsSelectedProperty = DependencyProperty.Register(nameof(IsSelected), typeof(bool), typeof(WizardStep));
-        public static readonly DependencyProperty IsProcessedProperty = DependencyProperty.Register(nameof(IsProcessed), typeof(bool), typeof(WizardStep));
+        public WizardStepSummary Summary { get; private set; }
 
         /// <summary>
         /// Initializes static members of the <see cref="WizardStep"/> class.
@@ -34,7 +33,7 @@ namespace MvvmWizard.Controls
         /// </summary>
         public WizardStep()
         {
-            this.Command = new SimpleCommand(this.TransitToCurrent);
+            this.Summary = new WizardStepSummary(this);
         }
 
         public Type ViewType
@@ -47,21 +46,6 @@ namespace MvvmWizard.Controls
         {
             get { return this.GetValue(UnderlyingDataContextProperty); }
             set { this.SetValue(UnderlyingDataContextProperty, value); }
-        }
-
-        public bool IsSelected
-        {
-            get { return (bool)this.GetValue(IsSelectedProperty); }
-            set { this.SetValue(IsSelectedProperty, value); }
-        }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether item/step is processed.
-        /// </summary>
-        public bool IsProcessed
-        {
-            get { return (bool)this.GetValue(IsProcessedProperty); }
-            set { this.SetValue(IsProcessedProperty, value); }
         }
 
         /// <summary>
@@ -82,24 +66,5 @@ namespace MvvmWizard.Controls
             }
         }
 
-        /// <summary>
-        /// Transit to current step.
-        /// </summary>
-        protected virtual void TransitToCurrent()
-        {
-            Wizard wizard = this.ParentTabControl;
-
-            if (!wizard.AllowNavigationOnSummaryItemClick)
-            {
-                return;
-            }
-
-            int transitTo = wizard.Items.IndexOf(this);
-
-            if (wizard.CurrentStepIndex != transitTo)
-            {
-                wizard.TryTransitTo(transitTo, true);
-            }
-        }
     }
 }

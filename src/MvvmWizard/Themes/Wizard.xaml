@@ -4,6 +4,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Styles/Button.xaml"/>
+        <ResourceDictionary Source="WizardStepSummary.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <ItemsPanelTemplate x:Key="SummaryPanelTemplate">
@@ -22,8 +23,7 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <ContentControl Grid.Row="0"
-                                Content="{Binding CurrentStep.Content, RelativeSource={RelativeSource TemplatedParent}}" />
+                <ContentPresenter Grid.Row="0" ContentSource="SelectedItem" />
 
                 <Grid Grid.Row="1" MinHeight="{TemplateBinding NavigationBlockMinHeight}">
                     
@@ -39,9 +39,15 @@
                                   HorizontalAlignment="{TemplateBinding SummaryHorizontalAlignment}"
                                   VerticalAlignment="{TemplateBinding SummaryVerticalAlignment}"
                                   ItemsPanel="{TemplateBinding SummaryPanelTemplate}"
-                                  ItemsSource="{Binding Items, RelativeSource={RelativeSource TemplatedParent}}"
+                                  ItemsSource="{Binding SummaryControls, RelativeSource={RelativeSource TemplatedParent}}"
                                   Visibility="{TemplateBinding SummaryVisibility}"
-                                  Margin="{TemplateBinding SummaryMargin}"/>
+                                  Margin="{TemplateBinding SummaryMargin}">
+                        <ItemsControl.ItemContainerStyle>
+                            <Style>
+                                <Setter Property="Control.Template" Value="{StaticResource WizardStepSummaryTemplate}" />
+                            </Style>
+                        </ItemsControl.ItemContainerStyle>
+                    </ItemsControl>
                 </Grid>
             </Grid>
         </Border>

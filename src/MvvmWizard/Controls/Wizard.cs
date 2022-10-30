@@ -47,6 +47,8 @@
         /// </summary>
         private bool isTransiting;
 
+        public List<WizardStepSummary> SummaryControls { get; private set; }
+
         /// <summary>
         /// Initializes static members of the <see cref="Wizard"/> class.
         /// </summary>
@@ -252,7 +254,7 @@
         {
             foreach (WizardStep step in e.RemovedItems.OfType<WizardStep>())
             {
-                step.IsSelected = false;
+                step.Summary.IsSelected = false;
             }
 
             if (e.AddedItems.Count == 0)
@@ -262,7 +264,7 @@
             }
 
             var selectedStep = (WizardStep)e.AddedItems[0];
-            selectedStep.IsSelected = true;
+            selectedStep.Summary.IsSelected = true;
 
             if (DesignerProperties.GetIsInDesignMode(this))
             {
@@ -300,7 +302,26 @@
         {
             this.Loaded -= this.OnLoaded;
 
-            this.TryTransitTo(this.FirstStepIndex);
+            SummaryControls = new List<WizardStepSummary>();
+            foreach (WizardStep step in Items)
+            {
+                SummaryControls.Add(step.Summary);
+            }
+            RaisePropertyChanged("SummaryControls");
+
+            if ( !DesignerProperties.GetIsInDesignMode(this) )
+            {
+                // Run mode
+                this.TryTransitTo(this.FirstStepIndex);
+            }
+            else
+            {
+                // Design mode
+                if ( ( Items.Count > 0 ) && ( this.SelectedIndex < 0 ) )
+                {
+                    this.SelectedIndex = 0 ;
+                }
+            }
         }
 
         /// <summary>
@@ -383,7 +404,7 @@
                     }
                 }
 
-                this.CurrentStep.IsProcessed = !skippingStep && navigatingForward;
+                this.CurrentStep.Summary.IsProcessed = !skippingStep && navigatingForward;
             }
 
             /* Non-circular and index was not changed (by user) -> Special cases for first and last steps */
