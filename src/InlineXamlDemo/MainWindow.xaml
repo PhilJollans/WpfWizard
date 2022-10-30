@@ -1,0 +1,144 @@
+﻿<Window x:Class="InlineXamlDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InlineXamlDemo"
+        xmlns:wiz="clr-namespace:MvvmWizard.Controls;assembly=MvvmWizard"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="450" Width="800"
+        WindowStartupLocation="CenterScreen" >
+
+  <Window.Resources>
+    <ResourceDictionary>
+
+      <Style TargetType="Button">
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="14"/>
+      </Style>
+
+      <Style x:Key="TitleStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="32"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+      </Style>
+
+    </ResourceDictionary>
+
+  </Window.Resources>
+
+  <Grid>
+
+    <wiz:Wizard TransitionButtonsHorizontalAlignment="Right"
+                NavigationBlockMinHeight="50"
+                IsTransitionAnimationEnabled="False"
+                SelectedIndex="0"
+                AllowNavigationOnSummaryItemClick="True"
+                >
+
+      <wiz:WizardStep BackButtonVisibility="Collapsed" 
+                      SkipButtonVisibility="Collapsed"
+                      ForwardButtonBackground="White"
+                      ForwardButtonForeground="DimGray"
+                      ForwardButtonBorderBrush="DimGray"
+                      ForwardButtonMouseMouseOverBackground="LightBlue"
+                      BackButtonBackground="White"
+                      BackButtonForeground="DimGray"
+                      BackButtonBorderBrush="DimGray"
+                      BackButtonMouseMouseOverBackground="Pink"
+                      >
+        <Grid Background="Khaki">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+          <TextBlock Grid.Row="0" Text="Step 1" Style="{StaticResource TitleStyle}"/>
+          <Separator Grid.Row="1"/>
+          <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="One"/>
+            <Button Grid.Column="1" Content="Two"/>
+            <Button Grid.Column="2" Content="Three"/>
+            <Button Grid.Column="3" Content="Four"/>
+          </Grid>
+        </Grid>
+      </wiz:WizardStep>
+
+      <wiz:WizardStep SkipButtonVisibility="Collapsed"
+                      ForwardButtonBackground="White"
+                      ForwardButtonForeground="DimGray"
+                      ForwardButtonBorderBrush="DimGray"
+                      ForwardButtonMouseMouseOverBackground="LightBlue"
+                      BackButtonBackground="White"
+                      BackButtonForeground="DimGray"
+                      BackButtonBorderBrush="DimGray"
+                      BackButtonMouseMouseOverBackground="Pink"
+                      >
+        <Grid Background="PaleTurquoise">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+          <TextBlock Grid.Row="0" Text="Step 2" Style="{StaticResource TitleStyle}"/>
+          <Separator Grid.Row="1"/>
+        </Grid>
+      </wiz:WizardStep>
+
+      <wiz:WizardStep x:Name="greenStep"
+                      SkipButtonVisibility="Collapsed"
+                      ForwardButtonBackground="White"
+                      ForwardButtonForeground="DimGray"
+                      ForwardButtonBorderBrush="DimGray"
+                      ForwardButtonMouseMouseOverBackground="LightBlue"
+                      BackButtonBackground="White"
+                      BackButtonForeground="DimGray"
+                      BackButtonBorderBrush="DimGray"
+                      BackButtonMouseMouseOverBackground="Pink"
+                      >
+        <Grid Background="LightGreen">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+          <TextBlock Grid.Row="0" Text="Step 3" Style="{StaticResource TitleStyle}"/>
+          <Separator Grid.Row="1"/>
+        </Grid>
+      </wiz:WizardStep>
+
+      <wiz:WizardStep ForwardButtonTitle="Finish"
+                      SkipButtonVisibility="Collapsed"
+                      ForwardButtonBackground="White"
+                      ForwardButtonForeground="DimGray"
+                      ForwardButtonBorderBrush="DimGray"
+                      ForwardButtonMouseMouseOverBackground="LightBlue"
+                      BackButtonBackground="White"
+                      BackButtonForeground="DimGray"
+                      BackButtonBorderBrush="DimGray"
+                      BackButtonMouseMouseOverBackground="Pink"
+                      >
+        <Grid Background="Tomato">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+          <TextBlock Grid.Row="0" Text="Step 4" Style="{StaticResource TitleStyle}"/>
+          <Separator Grid.Row="1"/>
+        </Grid>
+      </wiz:WizardStep>
+
+    </wiz:Wizard>
+        
+  </Grid>
+
+</Window>
