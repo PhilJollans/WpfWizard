@@ -1,0 +1,11 @@
+# Remove the line below if you want to inherit .editorconfig settings from higher directories
+root = true
+
+# All files
+[*]
+indent_style = space
+indent_size = 4
+tab_width = 4
+trim_trailing_whitespace = true
+end_of_line = crlf
+insert_final_newline = true

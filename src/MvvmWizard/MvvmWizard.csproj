@@ -10,6 +10,7 @@
     <PackageProjectUrl>https://github.com/lezhkin11/mvvm-wizard</PackageProjectUrl>
     <Copyright>Copyright © 2018</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <UseWPF>true</UseWPF>
   </PropertyGroup>
   <ItemGroup>
     <Page Include="Styles\Button.xaml">
