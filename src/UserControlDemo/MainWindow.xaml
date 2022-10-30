@@ -1,0 +1,27 @@
+﻿<Window x:Class="UserControlDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:steps="clr-namespace:UserControlDemo.Steps"
+        xmlns:wiz="clr-namespace:MvvmWizard.Controls;assembly=MvvmWizard"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+  <Grid>
+
+    <wiz:Wizard TransitionButtonsHorizontalAlignment="Right"
+                NavigationBlockMinHeight="50"
+                IsTransitionAnimationEnabled="False"
+                SelectedIndex="0"
+                AllowNavigationOnSummaryItemClick="True"
+                >
+
+      <wiz:WizardStep ViewType="{x:Type steps:StepOne}" BackButtonVisibility="Collapsed" />
+      <wiz:WizardStep ViewType="{x:Type steps:StepTwo}"    />
+      <wiz:WizardStep ViewType="{x:Type steps:StepThree}" ForwardButtonTitle="Finish" />
+      <wiz:WizardStep ViewType="{x:Type steps:StepFour}" ForwardButtonTitle="Finish" />
+    
+    </wiz:Wizard>
+
+  </Grid>
+</Window>
