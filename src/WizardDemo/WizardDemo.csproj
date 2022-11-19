@@ -143,7 +143,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MvvmWizard\WpfWizard.csproj">
+    <ProjectReference Include="..\WpfWizard\WpfWizard.csproj">
       <Project>{ecfd17d4-032a-4839-8cd5-74f41bd7baf0}</Project>
       <Name>WpfWizard</Name>
     </ProjectReference>

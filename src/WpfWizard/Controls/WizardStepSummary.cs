@@ -1,6 +1,6 @@
-﻿namespace MvvmWizard.Controls
+﻿namespace WpfWizard.Controls
 {
-    using MvvmWizard.Classes;
+    using WpfWizard.Classes;
     using System.Windows;
     using System.Windows.Controls.Primitives;
 

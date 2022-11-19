@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:steps="clr-namespace:UserControlDemo.Steps"
-        xmlns:wiz="clr-namespace:MvvmWizard.Controls;assembly=MvvmWizard"
+        xmlns:wiz="clr-namespace:WpfWizard.Controls;assembly=WpfWizard"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
   <Grid>

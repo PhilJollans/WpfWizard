@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
-        xmlns:controls="clr-namespace:MvvmWizard.Controls;assembly=MvvmWizard"
+        xmlns:controls="clr-namespace:WpfWizard.Controls;assembly=WpfWizard"
         xmlns:advanced="clr-namespace:WizardDemo.Views.Advanced"
         mc:Ignorable="d"
         Title="Advanced Settings Demo"

@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net45</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>MvvmWizard</PackageId>
+    <PackageId>WpfWizard</PackageId>
     <Version>1.1.2</Version>
     <Authors>lezhkin11</Authors>
     <Description>WPF MVVM Wizard</Description>

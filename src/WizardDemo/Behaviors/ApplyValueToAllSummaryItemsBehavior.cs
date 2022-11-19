@@ -9,7 +9,7 @@ namespace WizardDemo.Behaviors
 
     using MahApps.Metro.Controls;
 
-    using MvvmWizard.Controls;
+    using WpfWizard.Controls;
 
     /// <summary>
     /// The apply value to all summary items behavior.

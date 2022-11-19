@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UserControlDemo.Steps;
-using MvvmWizard.Classes;
+using WpfWizard.Classes;
 
 namespace UserControlDemo
 {

@@ -1,4 +1,4 @@
-﻿namespace MvvmWizard.Classes
+﻿namespace WpfWizard.Classes
 {
     using System;
     using System.Windows.Input;

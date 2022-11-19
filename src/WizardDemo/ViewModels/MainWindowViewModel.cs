@@ -3,7 +3,7 @@
     using System.Windows;
     using System.Windows.Input;
 
-    using MvvmWizard.Classes;
+    using WpfWizard.Classes;
 
     using Unity;
 

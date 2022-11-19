@@ -4,7 +4,7 @@ namespace WizardDemo.Views.Simple
 {
     using System.Windows.Input;
 
-    using MvvmWizard.Classes;
+    using WpfWizard.Classes;
 
     /// <summary>
     /// Interaction logic for SimpleDemoDialog.xaml

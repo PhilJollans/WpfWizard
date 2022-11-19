@@ -3,7 +3,7 @@ namespace WizardDemo.ViewModels.Simple
 {
     using System.Threading.Tasks;
 
-    using MvvmWizard.Classes;
+    using WpfWizard.Classes;
 
     using WizardDemo.Classes;
 
