@@ -11,6 +11,8 @@
         <StackPanel Orientation="Horizontal" />
     </ItemsPanelTemplate>
 
+    <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+
     <ControlTemplate x:Key="WizardTemplate" TargetType="controls:Wizard">
         <Border Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
@@ -26,7 +28,12 @@
                 <ContentPresenter Grid.Row="0" ContentSource="SelectedItem" />
 
                 <Grid Grid.Row="1" MinHeight="{TemplateBinding NavigationBlockMinHeight}">
-                    
+
+                    <Button x:Name="PART_HelpButton"
+                            Style="{TemplateBinding HelpButtonStyle}"
+                            HorizontalAlignment="{TemplateBinding HelpButtonHorizontalAlignment}"
+                            Visibility="{TemplateBinding ShowHelpButton, Converter={StaticResource BoolToVis}}"/>
+
                     <!-- Transition Buttons -->
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="{TemplateBinding TransitionButtonsHorizontalAlignment}" VerticalAlignment="{TemplateBinding TransitionButtonsVerticalAlignment}">
                         <Button x:Name="PART_BackButton" Style="{TemplateBinding BackButtonStyle}"/>
@@ -68,7 +75,11 @@
             <Trigger Property="ForwardButtonStyle" Value="{x:Null}">
                 <Setter TargetName="PART_ForwardButton" Property="Style" Value="{StaticResource ForwardButtonStyle}" />
             </Trigger>
-          
+
+            <Trigger Property="HelpButtonStyle" Value="{x:Null}">
+                <Setter TargetName="PART_HelpButton" Property="Style" Value="{StaticResource HelpButtonStyle}" />
+            </Trigger>
+
         </ControlTemplate.Triggers>
         
     </ControlTemplate>

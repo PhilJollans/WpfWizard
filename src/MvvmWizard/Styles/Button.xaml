@@ -19,7 +19,6 @@
 
     <Path x:Key="DefaultBackIcon" 
           x:Shared="False" 
-          Width="{Binding (TextElement.FontSize), RelativeSource={RelativeSource Self}}"
           Height="{Binding (TextElement.FontSize), RelativeSource={RelativeSource Self}}" 
           Margin="0,2,3,0"
           Fill="{Binding (TextElement.Foreground), RelativeSource={RelativeSource Self}}"
@@ -27,14 +26,12 @@
           Stretch="Fill" />
 
     <StackPanel x:Key="DefaultSkipIcon" x:Shared="False" Orientation="Horizontal">
-        <Path Width="{Binding (TextElement.FontSize), RelativeSource={RelativeSource Self}}" 
-              Height="{Binding (TextElement.FontSize), RelativeSource={RelativeSource Self}}"
+        <Path Height="{Binding (TextElement.FontSize), RelativeSource={RelativeSource Self}}"
               Margin="2,2,-5,0" 
               Fill="{Binding (TextElement.Foreground), RelativeSource={RelativeSource Self}}"
               Data="F1 M 25.1563,23.75L 23.1563,21.75L 15.9063,14.75L 22.4063,14.75L 31.9063,23.75L 22.4063,32.75L 15.9063,32.75L 23.1563,25.75L 25.1563,23.75 Z "
               Stretch="Fill" />
-        <Path Width="{Binding (TextElement.FontSize), RelativeSource={RelativeSource Self}}" 
-              Height="{Binding (TextElement.FontSize), RelativeSource={RelativeSource Self}}"
+        <Path Height="{Binding (TextElement.FontSize), RelativeSource={RelativeSource Self}}"
               Margin="0,2,0,0"
               Fill="{Binding (TextElement.Foreground), RelativeSource={RelativeSource Self}}"
               Data="F1 M 25.1563,23.75L 23.1563,21.75L 15.9063,14.75L 22.4063,14.75L 31.9063,23.75L 22.4063,32.75L 15.9063,32.75L 23.1563,25.75L 25.1563,23.75 Z "
@@ -43,11 +40,18 @@
 
     <Path x:Key="DefaultFowardIcon"
           x:Shared="False"
-          Width="{Binding (TextElement.FontSize), RelativeSource={RelativeSource Self}}"
           Height="{Binding (TextElement.FontSize), RelativeSource={RelativeSource Self}}" 
           Margin="10,2,0,0"
           Fill="{Binding (TextElement.Foreground), RelativeSource={RelativeSource Self}}"
           Data="F1 M 25.1563,23.75L 23.1563,21.75L 15.9063,14.75L 22.4063,14.75L 31.9063,23.75L 22.4063,32.75L 15.9063,32.75L 23.1563,25.75L 25.1563,23.75 Z "
+          Stretch="Fill" />
+
+    <Path x:Key="DefaultHelpIcon"
+          x:Shared="False"
+          Height="{Binding (TextElement.FontSize), RelativeSource={RelativeSource Self}}" 
+          Margin="10,2,0,0"
+          Fill="{Binding (TextElement.Foreground), RelativeSource={RelativeSource Self}}"
+          Data="F1 M10,19H13V22H10V19M12,2C17.35,2.22 19.68,7.62 16.5,11.67C15.67,12.67 14.33,13.33 13.67,14.17C13,15 13,16 13,17H10C10,15.33 10,13.92 10.67,12.92C11.33,11.92 12.67,11.33 13.5,10.67C15.92,8.43 15.32,5.26 12,5A3,3 0 0,0 9,8H6A6,6 0 0,1 12,2Z"
           Stretch="Fill" />
 
     <Style x:Key="BackButtonStyle" TargetType="Button" BasedOn="{StaticResource CommonTriggersButtonStyle}">
@@ -222,6 +226,65 @@
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="{Binding CurrentStep.ForwardButtonMouseMouseOverBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="HelpButtonStyle" TargetType="Button" BasedOn="{StaticResource CommonTriggersButtonStyle}">
+        <Setter Property="MinWidth"        Value="{Binding CurrentStep.HelpButtonMinWidth,        RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="MinHeight"       Value="{Binding CurrentStep.HelpButtonMinHeight,       RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="Width"           Value="{Binding CurrentStep.HelpButtonWidth,           RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="Height"          Value="{Binding CurrentStep.HelpButtonHeight,          RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="MaxWidth"        Value="{Binding CurrentStep.HelpButtonMaxWidth,        RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="MaxHeight"       Value="{Binding CurrentStep.HelpButtonMaxHeight,       RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="Foreground"      Value="{Binding CurrentStep.HelpButtonForeground,      RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="Background"      Value="{Binding CurrentStep.HelpButtonBackground,      RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="BorderBrush"     Value="{Binding CurrentStep.HelpButtonBorderBrush,     RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="BorderThickness" Value="{Binding CurrentStep.HelpButtonBorderThickness, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="Margin"          Value="{Binding CurrentStep.HelpButtonMargin,          RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="ToolTip"         Value="{Binding CurrentStep.HelpButtonTooltip,         RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="Visibility"      Value="{Binding CurrentStep.HelpButtonVisibility,      RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="IsEnabled"       Value="{Binding CurrentStep.HelpButtonIsEnabled,       RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="FontSize"        Value="{Binding CurrentStep.HelpButtonFontSize,        RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard} }" />
+        <Setter Property="FontWeight"      Value="{Binding CurrentStep.HelpButtonFontWeight,      RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard} }" />
+        <Setter Property="FontStyle"       Value="{Binding CurrentStep.HelpButtonFontStyle,       RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard} }" />
+        <Setter Property="Command"         Value="{Binding HelpCommand,                           RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding CurrentStep.HelpButtonHorizontalContentAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="VerticalContentAlignment" Value="{Binding CurrentStep.HelpButtonVerticalContentAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="{Binding CurrentStep.HelpButtonCornerRadius, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" 
+                            Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}">
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+
+                            <TextBlock Text="{Binding CurrentStep.HelpButtonTitle, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" 
+                                       Foreground="{TemplateBinding Foreground}" />
+
+                            <ContentControl x:Name="PART_ButtonIcon" 
+                                            Content="{Binding CurrentStep.HelpButtonIcon, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+
+                        </StackPanel>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+
+                        <DataTrigger Binding="{Binding CurrentStep.HelpButtonIcon, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" Value="{x:Null}">
+                            <Setter TargetName="PART_ButtonIcon" Property="Content" Value="{StaticResource DefaultHelpIcon}" />
+                        </DataTrigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{Binding CurrentStep.HelpButtonMouseMouseOverBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
             </Trigger>
         </Style.Triggers>
     </Style>

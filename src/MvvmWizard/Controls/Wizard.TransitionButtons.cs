@@ -10,10 +10,12 @@ namespace MvvmWizard.Controls
     {
         public static readonly DependencyProperty TransitionButtonsVerticalAlignmentProperty = DependencyProperty.Register(nameof(TransitionButtonsVerticalAlignment), typeof(VerticalAlignment), typeof(Wizard), new PropertyMetadata(VerticalAlignment.Bottom));
         public static readonly DependencyProperty TransitionButtonsHorizontalAlignmentProperty = DependencyProperty.Register(nameof(TransitionButtonsHorizontalAlignment), typeof(HorizontalAlignment), typeof(Wizard), new PropertyMetadata(HorizontalAlignment.Right));
+        public static readonly DependencyProperty HelpButtonHorizontalAlignmentProperty = DependencyProperty.Register(nameof(HelpButtonHorizontalAlignment), typeof(HorizontalAlignment), typeof(Wizard), new PropertyMetadata(HorizontalAlignment.Left));
 
         public static readonly DependencyProperty BackButtonStyleProperty = DependencyProperty.Register(nameof(BackButtonStyle), typeof(Style), typeof(Wizard));
         public static readonly DependencyProperty SkipButtonStyleProperty = DependencyProperty.Register(nameof(SkipButtonStyle), typeof(Style), typeof(Wizard));
         public static readonly DependencyProperty ForwardButtonStyleProperty = DependencyProperty.Register(nameof(ForwardButtonStyle), typeof(Style), typeof(Wizard));
+        public static readonly DependencyProperty HelpButtonStyleProperty = DependencyProperty.Register(nameof(HelpButtonStyle), typeof(Style), typeof(Wizard));
 
         public VerticalAlignment TransitionButtonsVerticalAlignment
         {
@@ -25,6 +27,12 @@ namespace MvvmWizard.Controls
         {
             get { return (HorizontalAlignment)this.GetValue(TransitionButtonsHorizontalAlignmentProperty); }
             set { this.SetValue(TransitionButtonsHorizontalAlignmentProperty, value); }
+        }
+
+        public HorizontalAlignment HelpButtonHorizontalAlignment
+        {
+            get { return (HorizontalAlignment)this.GetValue(HelpButtonHorizontalAlignmentProperty); }
+            set { this.SetValue(HelpButtonHorizontalAlignmentProperty, value); }
         }
 
         public Style BackButtonStyle
@@ -43,6 +51,12 @@ namespace MvvmWizard.Controls
         {
             get { return (Style)this.GetValue(ForwardButtonStyleProperty); }
             set { this.SetValue(ForwardButtonStyleProperty, value); }
+        }
+
+        public Style HelpButtonStyle
+        {
+            get { return (Style)this.GetValue(HelpButtonStyleProperty); }
+            set { this.SetValue(HelpButtonStyleProperty, value); }
         }
     }
 }

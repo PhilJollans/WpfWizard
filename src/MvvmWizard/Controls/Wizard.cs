@@ -30,6 +30,9 @@
         public static readonly DependencyProperty IsTransitionAnimationEnabledProperty = DependencyProperty.Register(nameof(IsTransitionAnimationEnabled), typeof(bool), typeof(Wizard));
         public static readonly DependencyProperty ForwardTransitionAnimationProperty = DependencyProperty.Register(nameof(ForwardTransitionAnimation), typeof(Storyboard), typeof(Wizard));
         public static readonly DependencyProperty BackwardTransitionAnimationProperty = DependencyProperty.Register(nameof(BackwardTransitionAnimation), typeof(Storyboard), typeof(Wizard));
+
+        public static readonly DependencyProperty HelpCommandProperty = DependencyProperty.Register(nameof(HelpCommand), typeof(ICommand), typeof(Wizard));
+        public static readonly DependencyProperty ShowHelpButtonProperty = DependencyProperty.Register(nameof(ShowHelpButton), typeof(bool), typeof(Wizard), new PropertyMetadata(false));
         // ReSharper restore StyleCop.SA1600
 
         /// <summary>
@@ -169,6 +172,25 @@
             get { return (Storyboard)this.GetValue(BackwardTransitionAnimationProperty); }
             set { this.SetValue(BackwardTransitionAnimationProperty, value); }
         }
+
+        /// <summary>
+        /// Gets or sets the help command.
+        /// </summary>
+        public ICommand HelpCommand
+        {
+            get { return (ICommand)this.GetValue(HelpCommandProperty); }
+            set { this.SetValue(HelpCommandProperty, value); }
+        }
+
+        /// <summary>
+        /// Set to true to show the help button.
+        /// </summary>
+        public bool ShowHelpButton
+        {
+            get { return (bool)this.GetValue(ShowHelpButtonProperty); }
+            set { this.SetValue(ShowHelpButtonProperty, value); }
+        }
+
 
         /// <summary>
         /// Gets the transition controller.

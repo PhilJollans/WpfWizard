@@ -65,6 +65,21 @@
         <Setter Property="ForwardButtonFontSize" Value="14" />
         <Setter Property="ForwardButtonFontWeight" Value="Bold" />
 
+        <Setter Property="HelpButtonHeight" Value="50" />
+        <Setter Property="HelpButtonMinWidth" Value="150" />
+        <Setter Property="HelpButtonMargin" Value="25,10,25,10" />
+        <Setter Property="HelpButtonForeground" Value="White" />
+        <Setter Property="HelpButtonBackground" Value="#CCFA6800" />
+        <Setter Property="HelpButtonMouseMouseOverBackground" Value="#FF454545" />
+        <Setter Property="HelpButtonBorderBrush" Value="#CCFA6800" />
+        <Setter Property="HelpButtonBorderThickness" Value="2" />
+        <Setter Property="HelpButtonCornerRadius" Value="3" />
+        <Setter Property="HelpButtonTitle" Value="Help" />
+        <Setter Property="HelpButtonTooltip" Value="Show help on the wizard" />
+        <Setter Property="HelpButtonHorizontalContentAlignment" Value="Center" />
+        <Setter Property="HelpButtonVerticalContentAlignment" Value="Center" />
+        <Setter Property="HelpButtonFontSize" Value="14" />
+        <Setter Property="HelpButtonFontWeight" Value="Bold" />
 
         <Setter Property="Margin" Value="7,3" />
         <Setter Property="Template" Value="{StaticResource WizardStepTemplate}" />
