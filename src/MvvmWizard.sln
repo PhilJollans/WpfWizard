@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvvmWizard", "MvvmWizard\MvvmWizard.csproj", "{ECFD17D4-032A-4839-8CD5-74F41BD7BAF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfWizard", "MvvmWizard\WpfWizard.csproj", "{ECFD17D4-032A-4839-8CD5-74F41BD7BAF0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WizardDemo", "WizardDemo\WizardDemo.csproj", "{7DD36B79-4EE0-4DDB-A780-14C0D3BE1978}"
 EndProject
