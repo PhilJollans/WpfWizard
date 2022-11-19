@@ -9,6 +9,10 @@
         <Setter Property="ActiveSummaryItemBrush" Value="{StaticResource AccentColorBrush}" />
         <Setter Property="SummaryItemMouseOverBrush" Value="{StaticResource AccentBaseColorBrush}" />
 
+    </Style>
+
+    <Style TargetType="controls:Wizard" BasedOn="{StaticResource {x:Type controls:Wizard}}">
+
         <Setter Property="BackButtonForeground" Value="{StaticResource AccentColorBrush}" />
         <Setter Property="BackButtonBackground" Value="Transparent" />
         <Setter Property="BackButtonMouseMouseOverBackground" Value="{StaticResource GrayBrush8}" />
@@ -25,4 +29,5 @@
         <Setter Property="ForwardButtonBorderBrush" Value="{StaticResource AccentColorBrush}" />
 
     </Style>
+
 </ResourceDictionary>

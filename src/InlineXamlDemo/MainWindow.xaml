@@ -35,18 +35,18 @@
                 IsTransitionAnimationEnabled="False"
                 SelectedIndex="0"
                 AllowNavigationOnSummaryItemClick="True"
+                ForwardButtonBackground="White"
+                ForwardButtonForeground="DimGray"
+                ForwardButtonBorderBrush="DimGray"
+                ForwardButtonMouseMouseOverBackground="LightBlue"
+                BackButtonBackground="White"
+                BackButtonForeground="DimGray"
+                BackButtonBorderBrush="DimGray"
+                BackButtonMouseMouseOverBackground="Pink"
                 >
 
       <wiz:WizardStep BackButtonVisibility="Collapsed" 
                       SkipButtonVisibility="Collapsed"
-                      ForwardButtonBackground="White"
-                      ForwardButtonForeground="DimGray"
-                      ForwardButtonBorderBrush="DimGray"
-                      ForwardButtonMouseMouseOverBackground="LightBlue"
-                      BackButtonBackground="White"
-                      BackButtonForeground="DimGray"
-                      BackButtonBorderBrush="DimGray"
-                      BackButtonMouseMouseOverBackground="Pink"
                       >
         <Grid Background="Khaki">
           <Grid.RowDefinitions>
@@ -72,16 +72,7 @@
         </Grid>
       </wiz:WizardStep>
 
-      <wiz:WizardStep SkipButtonVisibility="Collapsed"
-                      ForwardButtonBackground="White"
-                      ForwardButtonForeground="DimGray"
-                      ForwardButtonBorderBrush="DimGray"
-                      ForwardButtonMouseMouseOverBackground="LightBlue"
-                      BackButtonBackground="White"
-                      BackButtonForeground="DimGray"
-                      BackButtonBorderBrush="DimGray"
-                      BackButtonMouseMouseOverBackground="Pink"
-                      >
+      <wiz:WizardStep SkipButtonVisibility="Collapsed">
         <Grid Background="PaleTurquoise">
           <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -94,16 +85,7 @@
       </wiz:WizardStep>
 
       <wiz:WizardStep x:Name="greenStep"
-                      SkipButtonVisibility="Collapsed"
-                      ForwardButtonBackground="White"
-                      ForwardButtonForeground="DimGray"
-                      ForwardButtonBorderBrush="DimGray"
-                      ForwardButtonMouseMouseOverBackground="LightBlue"
-                      BackButtonBackground="White"
-                      BackButtonForeground="DimGray"
-                      BackButtonBorderBrush="DimGray"
-                      BackButtonMouseMouseOverBackground="Pink"
-                      >
+                      SkipButtonVisibility="Collapsed">
         <Grid Background="LightGreen">
           <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -116,16 +98,7 @@
       </wiz:WizardStep>
 
       <wiz:WizardStep ForwardButtonTitle="Finish"
-                      SkipButtonVisibility="Collapsed"
-                      ForwardButtonBackground="White"
-                      ForwardButtonForeground="DimGray"
-                      ForwardButtonBorderBrush="DimGray"
-                      ForwardButtonMouseMouseOverBackground="LightBlue"
-                      BackButtonBackground="White"
-                      BackButtonForeground="DimGray"
-                      BackButtonBorderBrush="DimGray"
-                      BackButtonMouseMouseOverBackground="Pink"
-                      >
+                      SkipButtonVisibility="Collapsed">
         <Grid Background="Tomato">
           <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

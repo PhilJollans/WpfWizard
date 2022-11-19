@@ -18,68 +18,16 @@
         <Setter Property="SummaryItemMouseOverBrush" Value="#FFFA6800" />
 
 
-        <Setter Property="BackButtonHeight" Value="50" />
-        <Setter Property="BackButtonMinWidth" Value="60" />
-        <Setter Property="BackButtonMargin" Value="25,10,5,10" />
-        <Setter Property="BackButtonForeground" Value="#CCFA6800" />
-        <Setter Property="BackButtonBackground" Value="Transparent" />
-        <Setter Property="BackButtonMouseMouseOverBackground" Value="#FF454545" />
-        <Setter Property="BackButtonBorderBrush" Value="#CCFA6800" />
-        <Setter Property="BackButtonBorderThickness" Value="2" />
-        <Setter Property="BackButtonCornerRadius" Value="3" />
         <Setter Property="BackButtonTooltip" Value="Go to Previous Step" />
-        <Setter Property="BackButtonHorizontalContentAlignment" Value="Center" />
-        <Setter Property="BackButtonVerticalContentAlignment" Value="Center" />
-        <Setter Property="BackButtonFontSize" Value="14" />
-        <Setter Property="BackButtonFontWeight" Value="Bold" />
 
-        <Setter Property="SkipButtonHeight" Value="50" />
-        <Setter Property="SkipButtonMinWidth" Value="70" />
-        <Setter Property="SkipButtonMargin" Value="5,10,0,10" />
-        <Setter Property="SkipButtonForeground" Value="#CCFA6800" />
-        <Setter Property="SkipButtonBackground" Value="Transparent" />
-        <Setter Property="SkipButtonMouseMouseOverBackground" Value="#FF454545" />
-        <Setter Property="SkipButtonBorderBrush" Value="#CCFA6800" />
-        <Setter Property="SkipButtonBorderThickness" Value="2" />
-        <Setter Property="SkipButtonCornerRadius" Value="3" />
         <Setter Property="SkipButtonTitle" Value="Skip" />
         <Setter Property="SkipButtonTooltip" Value="Skip Current Step" />
-        <Setter Property="SkipButtonHorizontalContentAlignment" Value="Center" />
-        <Setter Property="SkipButtonVerticalContentAlignment" Value="Center" />
-        <Setter Property="SkipButtonFontSize" Value="14" />
-        <Setter Property="SkipButtonFontWeight" Value="Bold" />
 
-        <Setter Property="ForwardButtonHeight" Value="50" />
-        <Setter Property="ForwardButtonMinWidth" Value="150" />
-        <Setter Property="ForwardButtonMargin" Value="10,10,25,10" />
-        <Setter Property="ForwardButtonForeground" Value="White" />
-        <Setter Property="ForwardButtonBackground" Value="#CCFA6800" />
-        <Setter Property="ForwardButtonMouseMouseOverBackground" Value="#FF454545" />
-        <Setter Property="ForwardButtonBorderBrush" Value="#CCFA6800" />
-        <Setter Property="ForwardButtonBorderThickness" Value="2" />
-        <Setter Property="ForwardButtonCornerRadius" Value="3" />
         <Setter Property="ForwardButtonTitle" Value="Next" />
         <Setter Property="ForwardButtonTooltip" Value="Go to Next Step" />
-        <Setter Property="ForwardButtonHorizontalContentAlignment" Value="Center" />
-        <Setter Property="ForwardButtonVerticalContentAlignment" Value="Center" />
-        <Setter Property="ForwardButtonFontSize" Value="14" />
-        <Setter Property="ForwardButtonFontWeight" Value="Bold" />
 
-        <Setter Property="HelpButtonHeight" Value="50" />
-        <Setter Property="HelpButtonMinWidth" Value="150" />
-        <Setter Property="HelpButtonMargin" Value="25,10,25,10" />
-        <Setter Property="HelpButtonForeground" Value="White" />
-        <Setter Property="HelpButtonBackground" Value="#CCFA6800" />
-        <Setter Property="HelpButtonMouseMouseOverBackground" Value="#FF454545" />
-        <Setter Property="HelpButtonBorderBrush" Value="#CCFA6800" />
-        <Setter Property="HelpButtonBorderThickness" Value="2" />
-        <Setter Property="HelpButtonCornerRadius" Value="3" />
         <Setter Property="HelpButtonTitle" Value="Help" />
         <Setter Property="HelpButtonTooltip" Value="Show help on the wizard" />
-        <Setter Property="HelpButtonHorizontalContentAlignment" Value="Center" />
-        <Setter Property="HelpButtonVerticalContentAlignment" Value="Center" />
-        <Setter Property="HelpButtonFontSize" Value="14" />
-        <Setter Property="HelpButtonFontWeight" Value="Bold" />
 
         <Setter Property="Margin" Value="7,3" />
         <Setter Property="Template" Value="{StaticResource WizardStepTemplate}" />
