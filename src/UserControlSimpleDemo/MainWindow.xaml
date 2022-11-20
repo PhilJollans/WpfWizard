@@ -15,19 +15,24 @@
                 IsTransitionAnimationEnabled="False"
                 SelectedIndex="0"
                 AllowNavigationOnSummaryItemClick="True"
-                ShowHelpButton="True"
+                HelpButtonVisibility="Visible"
+                BackButtonTooltip="Go back to previous step"
+                SkipButtonTooltip="Skip to previous step"
+                HelpButtonTooltip="Show help for the wizard"
+                ForwardButtonTooltip="Go forward to the next step"
                 >
 
-      <wiz:WizardStep BackButtonVisibility="Collapsed">
+
+      <wiz:WizardStep wiz:Wizard.BackButtonVisibility="Collapsed" wiz:Wizard.SkipButtonTooltip="Skip step one">
         <steps:StepOne/>
       </wiz:WizardStep>
-      <wiz:WizardStep>
+      <wiz:WizardStep wiz:Wizard.BackButtonIsEnabled="False" wiz:Wizard.SkipButtonTooltip="Skip step two" wiz:Wizard.HelpButtonTooltip="Show help for step two" >
         <steps:StepTwo/>
       </wiz:WizardStep>
-      <wiz:WizardStep x:Name="Step3" ForwardButtonTitle="Finish">
+      <wiz:WizardStep x:Name="Step3">
         <steps:StepThree/>
       </wiz:WizardStep>
-      <wiz:WizardStep ForwardButtonTitle="Finish">
+      <wiz:WizardStep wiz:Wizard.ForwardButtonTitle="Finish" wiz:Wizard.HelpButtonVisibility="Collapsed" >
         <steps:StepFour/>
       </wiz:WizardStep>
     

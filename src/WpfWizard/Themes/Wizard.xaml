@@ -31,8 +31,7 @@
 
                     <Button x:Name="PART_HelpButton"
                             Style="{TemplateBinding HelpButtonStyle}"
-                            HorizontalAlignment="{TemplateBinding HelpButtonHorizontalAlignment}"
-                            Visibility="{TemplateBinding ShowHelpButton, Converter={StaticResource BoolToVis}}"/>
+                            HorizontalAlignment="{TemplateBinding HelpButtonHorizontalAlignment}"/>
 
                     <!-- Transition Buttons -->
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="{TemplateBinding TransitionButtonsHorizontalAlignment}" VerticalAlignment="{TemplateBinding TransitionButtonsVerticalAlignment}">
@@ -149,6 +148,26 @@
         <Setter Property="HelpButtonVerticalContentAlignment" Value="Center" />
         <Setter Property="HelpButtonFontSize" Value="14" />
         <Setter Property="HelpButtonFontWeight" Value="Bold" />
+
+        <!-- These are defined as attached properties -->
+        <Setter Property="controls:Wizard.BackButtonTooltip" Value="Go to Previous Step" />
+        <Setter Property="controls:Wizard.BackButtonVisibility" Value="Visible" />
+        <Setter Property="controls:Wizard.BackButtonIsEnabled" Value="True" />
+
+        <Setter Property="controls:Wizard.SkipButtonTitle" Value="Skip" />
+        <Setter Property="controls:Wizard.SkipButtonTooltip" Value="Skip Current Step" />
+        <Setter Property="controls:Wizard.SkipButtonVisibility" Value="Visible" />
+        <Setter Property="controls:Wizard.SkipButtonIsEnabled" Value="True" />
+
+        <Setter Property="controls:Wizard.ForwardButtonTitle" Value="Next" />
+        <Setter Property="controls:Wizard.ForwardButtonTooltip" Value="Go to Next Step" />
+        <Setter Property="controls:Wizard.ForwardButtonVisibility" Value="Visible" />
+        <Setter Property="controls:Wizard.ForwardButtonIsEnabled" Value="True" />
+
+        <Setter Property="controls:Wizard.HelpButtonTitle" Value="Help" />
+        <Setter Property="controls:Wizard.HelpButtonTooltip" Value="Show help on the wizard" />
+        <Setter Property="controls:Wizard.HelpButtonVisibility" Value="Collapsed" />
+        <Setter Property="controls:Wizard.HelpButtonIsEnabled" Value="True" />
 
         <!-- Summary -->
         <Setter Property="SummaryPanelTemplate" Value="{StaticResource SummaryPanelTemplate}" />

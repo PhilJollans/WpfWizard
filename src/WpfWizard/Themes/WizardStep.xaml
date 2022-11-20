@@ -18,7 +18,7 @@
         <Setter Property="SummaryItemMouseOverBrush" Value="#FFFA6800" />
 
 
-        <Setter Property="BackButtonTooltip" Value="Go to Previous Step" />
+        <!--<Setter Property="BackButtonTooltip" Value="Go to Previous Step" />
 
         <Setter Property="SkipButtonTitle" Value="Skip" />
         <Setter Property="SkipButtonTooltip" Value="Skip Current Step" />
@@ -27,7 +27,7 @@
         <Setter Property="ForwardButtonTooltip" Value="Go to Next Step" />
 
         <Setter Property="HelpButtonTitle" Value="Help" />
-        <Setter Property="HelpButtonTooltip" Value="Show help on the wizard" />
+        <Setter Property="HelpButtonTooltip" Value="Show help on the wizard" />-->
 
         <Setter Property="Margin" Value="7,3" />
         <Setter Property="Template" Value="{StaticResource WizardStepTemplate}" />

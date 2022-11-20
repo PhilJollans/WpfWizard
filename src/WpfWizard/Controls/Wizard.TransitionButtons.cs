@@ -1,8 +1,12 @@
 ﻿// ReSharper disable StyleCop.SA1600
 namespace WpfWizard.Controls
 {
+    using System.Linq.Expressions;
+    using System.Reflection;
+    using System;
     using System.Windows;
     using System.Windows.Media;
+    using WpfWizard.Classes;
 
     /// <summary>
     /// The wizard.
@@ -13,6 +17,7 @@ namespace WpfWizard.Controls
         public static readonly DependencyProperty TransitionButtonsHorizontalAlignmentProperty = DependencyProperty.Register(nameof(TransitionButtonsHorizontalAlignment), typeof(HorizontalAlignment), typeof(Wizard), new PropertyMetadata(HorizontalAlignment.Right));
         public static readonly DependencyProperty HelpButtonHorizontalAlignmentProperty = DependencyProperty.Register(nameof(HelpButtonHorizontalAlignment), typeof(HorizontalAlignment), typeof(Wizard), new PropertyMetadata(HorizontalAlignment.Left));
 
+        // These properties were formerly defined in WizardStep
         public static readonly DependencyProperty BackButtonStyleProperty = DependencyProperty.Register(nameof(BackButtonStyle), typeof(Style), typeof(Wizard));
         public static readonly DependencyProperty SkipButtonStyleProperty = DependencyProperty.Register(nameof(SkipButtonStyle), typeof(Style), typeof(Wizard));
         public static readonly DependencyProperty ForwardButtonStyleProperty = DependencyProperty.Register(nameof(ForwardButtonStyle), typeof(Style), typeof(Wizard));
@@ -112,6 +117,29 @@ namespace WpfWizard.Controls
         public static readonly DependencyProperty SkipButtonFontStyleProperty = DependencyProperty.Register(nameof(SkipButtonFontStyle), typeof(FontStyle), typeof(Wizard));
         public static readonly DependencyProperty ForwardButtonFontStyleProperty = DependencyProperty.Register(nameof(ForwardButtonFontStyle), typeof(FontStyle), typeof(Wizard));
         public static readonly DependencyProperty HelpButtonFontStyleProperty = DependencyProperty.Register(nameof(HelpButtonFontStyle), typeof(FontStyle), typeof(Wizard));
+
+        // The following properties are defined as attached properties, so that they
+        // can be applied to Wizard and WizardStep.
+
+        public static readonly DependencyProperty BackButtonTooltipProperty       = DependencyProperty.RegisterAttached("BackButtonTooltip",       typeof(object), typeof(Wizard));
+        public static readonly DependencyProperty SkipButtonTooltipProperty       = DependencyProperty.RegisterAttached("SkipButtonTooltip",       typeof(object), typeof(Wizard));
+        public static readonly DependencyProperty ForwardButtonTooltipProperty    = DependencyProperty.RegisterAttached("ForwardButtonTooltip",    typeof(object), typeof(Wizard));
+        public static readonly DependencyProperty HelpButtonTooltipProperty       = DependencyProperty.RegisterAttached("HelpButtonTooltip",       typeof(object), typeof(Wizard));
+
+        public static readonly DependencyProperty BackButtonVisibilityProperty    = DependencyProperty.RegisterAttached("BackButtonVisibility",    typeof(Visibility), typeof(Wizard));
+        public static readonly DependencyProperty SkipButtonVisibilityProperty    = DependencyProperty.RegisterAttached("SkipButtonVisibility",    typeof(Visibility), typeof(Wizard));
+        public static readonly DependencyProperty ForwardButtonVisibilityProperty = DependencyProperty.RegisterAttached("ForwardButtonVisibility", typeof(Visibility), typeof(Wizard));
+        public static readonly DependencyProperty HelpButtonVisibilityProperty    = DependencyProperty.RegisterAttached("HelpButtonVisibility",    typeof(Visibility), typeof(Wizard));
+
+        public static readonly DependencyProperty BackButtonIsEnabledProperty     = DependencyProperty.RegisterAttached("BackButtonIsEnabled",     typeof(bool), typeof(Wizard));
+        public static readonly DependencyProperty SkipButtonIsEnabledProperty     = DependencyProperty.RegisterAttached("SkipButtonIsEnabled",     typeof(bool), typeof(Wizard));
+        public static readonly DependencyProperty ForwardButtonIsEnabledProperty  = DependencyProperty.RegisterAttached("ForwardButtonIsEnabled",  typeof(bool), typeof(Wizard));
+        public static readonly DependencyProperty HelpButtonIsEnabledProperty     = DependencyProperty.RegisterAttached("HelpButtonIsEnabled",     typeof(bool), typeof(Wizard));
+
+        public static readonly DependencyProperty BackButtonTitleProperty         = DependencyProperty.RegisterAttached("BackButtonTitle",         typeof(string), typeof(Wizard));
+        public static readonly DependencyProperty SkipButtonTitleProperty         = DependencyProperty.RegisterAttached("SkipButtonTitle",         typeof(string), typeof(Wizard));
+        public static readonly DependencyProperty ForwardButtonTitleProperty      = DependencyProperty.RegisterAttached("ForwardButtonTitle",      typeof(string), typeof(Wizard));
+        public static readonly DependencyProperty HelpButtonTitleProperty         = DependencyProperty.RegisterAttached("HelpButtonTitle",         typeof(string), typeof(Wizard));
 
         public VerticalAlignment TransitionButtonsVerticalAlignment
         {
@@ -629,5 +657,109 @@ namespace WpfWizard.Controls
             get { return (FontStyle)this.GetValue(HelpButtonFontStyleProperty); }
             set { this.SetValue(HelpButtonFontStyleProperty, value); }
         }
+
+        // The following properties are defined as attached properties, so that they
+        // can be applied to Wizard and WizardStep.
+
+        /* Tooltip */
+        public static object GetBackButtonTooltip(UIElement target) => (object)target.GetValue(BackButtonTooltipProperty);
+        public static void   SetBackButtonTooltip(UIElement target, object value) => target.SetValue(BackButtonTooltipProperty, value);
+
+        public static object GetSkipButtonTooltip(UIElement target) => (object)target.GetValue(SkipButtonTooltipProperty);
+        public static void   SetSkipButtonTooltip(UIElement target, object value) => target.SetValue(SkipButtonTooltipProperty, value);
+
+        public static object GetForwardButtonTooltip(UIElement target) => (object)target.GetValue(ForwardButtonTooltipProperty);
+        public static void   SetForwardButtonTooltip(UIElement target, object value) => target.SetValue(ForwardButtonTooltipProperty, value);
+
+        public static object GetHelpButtonTooltip(UIElement target) => (object)target.GetValue(HelpButtonTooltipProperty);
+        public static void   SetHelpButtonTooltip(UIElement target, object value) => target.SetValue(HelpButtonTooltipProperty, value);
+
+
+        /* Visibility */
+        public static Visibility GetBackButtonVisibility(UIElement target) => (Visibility)target.GetValue(BackButtonVisibilityProperty);
+        public static void       SetBackButtonVisibility(UIElement target, Visibility value) => target.SetValue(BackButtonVisibilityProperty, value);
+
+        public static Visibility GetSkipButtonVisibility(UIElement target) => (Visibility)target.GetValue(SkipButtonVisibilityProperty);
+        public static void       SetSkipButtonVisibility(UIElement target, Visibility value) => target.SetValue(SkipButtonVisibilityProperty, value);
+
+        public static Visibility GetForwardButtonVisibility(UIElement target) => (Visibility)target.GetValue(ForwardButtonVisibilityProperty);
+        public static void       SetForwardButtonVisibility(UIElement target, Visibility value) => target.SetValue(ForwardButtonVisibilityProperty, value);
+
+        public static Visibility GetHelpButtonVisibility(UIElement target) => (Visibility)target.GetValue(HelpButtonVisibilityProperty);
+        public static void       SetHelpButtonVisibility(UIElement target, Visibility value) => target.SetValue(HelpButtonVisibilityProperty, value);
+
+        /* IsEnabled */
+        public static bool GetBackButtonIsEnabled(UIElement target) => (bool)target.GetValue(BackButtonIsEnabledProperty);
+        public static void SetBackButtonIsEnabled(UIElement target, bool value) => target.SetValue(BackButtonIsEnabledProperty, value);
+
+        public static bool GetSkipButtonIsEnabled(UIElement target) => (bool)target.GetValue(SkipButtonIsEnabledProperty);
+        public static void SetSkipButtonIsEnabled(UIElement target, bool value) => target.SetValue(SkipButtonIsEnabledProperty, value);
+
+        public static bool GetForwardButtonIsEnabled(UIElement target) => (bool)target.GetValue(ForwardButtonIsEnabledProperty);
+        public static void SetForwardButtonIsEnabled(UIElement target, bool value) => target.SetValue(ForwardButtonIsEnabledProperty, value);
+
+        public static bool GetHelpButtonIsEnabled(UIElement target) => (bool)target.GetValue(HelpButtonIsEnabledProperty);
+        public static void SetHelpButtonIsEnabled(UIElement target, bool value) => target.SetValue(HelpButtonIsEnabledProperty, value);
+
+        /* Title */
+        public static string GetBackButtonTitle(UIElement target) => (string)target.GetValue(BackButtonTitleProperty);
+        public static void   SetBackButtonTitle(UIElement target, string value) => target.SetValue(BackButtonTitleProperty, value);
+
+        public static string GetSkipButtonTitle(UIElement target) => (string)target.GetValue(SkipButtonTitleProperty);
+        public static void   SetSkipButtonTitle(UIElement target, string value) => target.SetValue(SkipButtonTitleProperty, value);
+
+        public static string GetForwardButtonTitle(UIElement target) => (string)target.GetValue(ForwardButtonTitleProperty);
+        public static void   SetForwardButtonTitle(UIElement target, string value) => target.SetValue(ForwardButtonTitleProperty, value);
+
+        public static string GetHelpButtonTitle(UIElement target) => (string)target.GetValue(HelpButtonTitleProperty);
+        public static void   SetHelpButtonTitle(UIElement target, string value) => target.SetValue(HelpButtonTitleProperty, value);
+
+
+        public Visibility BackVisibility    => GetWithFallback ( BackButtonVisibilityProperty,    Visibility.Visible ) ;
+        public Visibility SkipVisibility    => GetWithFallback ( SkipButtonVisibilityProperty,    Visibility.Visible ) ;
+        public Visibility ForwardVisibility => GetWithFallback ( ForwardButtonVisibilityProperty, Visibility.Visible ) ;
+        public Visibility HelpVisibility    => GetWithFallback ( HelpButtonVisibilityProperty,    Visibility.Visible ) ;
+                                                                 
+        public bool       BackIsEnabled     => GetWithFallback ( BackButtonIsEnabledProperty,     true);
+        public bool       SkipIsEnabled     => GetWithFallback ( SkipButtonIsEnabledProperty,     true);
+        public bool       ForwardIsEnabled  => GetWithFallback ( ForwardButtonIsEnabledProperty,  true);
+        public bool       HelpIsEnabled     => GetWithFallback ( HelpButtonIsEnabledProperty,     true);
+                                                                 
+        public object     BackTooltip       => GetWithFallback ( BackButtonTooltipProperty,       (object)null);
+        public object     SkipTooltip       => GetWithFallback ( SkipButtonTooltipProperty,       (object)null);
+        public object     ForwardTooltip    => GetWithFallback ( ForwardButtonTooltipProperty,    (object)null);
+        public object     HelpTooltip       => GetWithFallback ( HelpButtonTooltipProperty,       (object)null);
+                                                                 
+        public string     BackTitle         => GetWithFallback ( BackButtonTitleProperty,         "" ) ; 
+        public string     SkipTitle         => GetWithFallback ( SkipButtonTitleProperty,         "Skip" ) ;
+        public string     ForwardTitle      => GetWithFallback ( ForwardButtonTitleProperty,      "Next" ) ;
+        public string     HelpTitle         => GetWithFallback ( HelpButtonTitleProperty,         "Help" );
+
+        private T GetWithFallback<T> ( DependencyProperty dp, T defalutValue )
+        {
+            if ( IsPropertySetLocally ( CurrentStep, dp ) )
+            {
+                return (T)CurrentStep.GetValue ( dp ) ;
+            }
+            else if ( IsPropertySetLocally ( this, dp ) )
+            {
+                return (T)this.GetValue(dp) ;
+            }
+            else
+            {
+                return defalutValue ;
+            }
+        }
+
+        private bool IsPropertyDefault ( DependencyObject obj, DependencyProperty dp )
+        {
+            return DependencyPropertyHelper.GetValueSource(obj, dp).BaseValueSource == BaseValueSource.Default;
+        }
+
+        private bool IsPropertySetLocally ( DependencyObject obj, DependencyProperty dp)
+        {
+            return DependencyPropertyHelper.GetValueSource(obj, dp).BaseValueSource == BaseValueSource.Local;
+        }
+
     }
 }
