@@ -732,10 +732,10 @@ namespace WpfWizard.Controls
                                                                  
         public string     BackTitle         => GetWithFallback ( BackButtonTitleProperty,         "" ) ; 
         public string     SkipTitle         => GetWithFallback ( SkipButtonTitleProperty,         "Skip" ) ;
-        public string     ForwardTitle      => GetWithFallback ( ForwardButtonTitleProperty,      "Next" ) ;
+        public string     ForwardTitle      => GetWithFallback ( ForwardButtonTitleProperty,      "Next", "Finish" ) ;
         public string     HelpTitle         => GetWithFallback ( HelpButtonTitleProperty,         "Help" );
 
-        private T GetWithFallback<T> ( DependencyProperty dp, T defalutValue )
+        private T GetWithFallback<T> ( DependencyProperty dp, T defaultValue )
         {
             if ( IsPropertySetLocally ( CurrentStep, dp ) )
             {
@@ -747,7 +747,27 @@ namespace WpfWizard.Controls
             }
             else
             {
-                return defalutValue ;
+                return defaultValue ;
+            }
+        }
+
+        private string GetWithFallback ( DependencyProperty dp, string defaultValue, string defaultLastStep )
+        {
+            if (IsPropertySetLocally(CurrentStep, dp))
+            {
+                return (string)CurrentStep.GetValue(dp);
+            }
+            else if (IsPropertySetLocally(this, dp))
+            {
+                return (string)this.GetValue(dp);
+            }
+            else if ( this.IsLastStep )
+            {
+                return defaultLastStep;
+            }
+            else
+            {
+                return defaultValue;
             }
         }
 

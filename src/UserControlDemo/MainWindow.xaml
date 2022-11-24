@@ -16,10 +16,10 @@
                 AllowNavigationOnSummaryItemClick="True"
                 >
 
-      <wiz:WizardStep ViewType="{x:Type steps:StepOne}" BackButtonVisibility="Collapsed" />
+      <wiz:WizardStep ViewType="{x:Type steps:StepOne}" wiz:Wizard.BackButtonVisibility="Collapsed" />
       <wiz:WizardStep ViewType="{x:Type steps:StepTwo}"    />
-      <wiz:WizardStep ViewType="{x:Type steps:StepThree}" ForwardButtonTitle="Finish" />
-      <wiz:WizardStep ViewType="{x:Type steps:StepFour}" ForwardButtonTitle="Finish" />
+      <wiz:WizardStep ViewType="{x:Type steps:StepThree}" wiz:Wizard.ForwardButtonTitle="Finish" />
+      <wiz:WizardStep ViewType="{x:Type steps:StepFour}" wiz:Wizard.ForwardButtonTitle="Finish" />
     
     </wiz:Wizard>
 

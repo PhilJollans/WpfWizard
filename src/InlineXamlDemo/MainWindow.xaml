@@ -45,8 +45,8 @@
                 BackButtonMouseMouseOverBackground="Pink"
                 >
 
-      <wiz:WizardStep BackButtonVisibility="Collapsed" 
-                      SkipButtonVisibility="Collapsed"
+      <wiz:WizardStep wiz:Wizard.BackButtonVisibility="Collapsed" 
+                      wiz:Wizard.SkipButtonVisibility="Collapsed"
                       >
         <Grid Background="Khaki">
           <Grid.RowDefinitions>
@@ -72,7 +72,7 @@
         </Grid>
       </wiz:WizardStep>
 
-      <wiz:WizardStep SkipButtonVisibility="Collapsed">
+      <wiz:WizardStep wiz:Wizard.SkipButtonVisibility="Collapsed">
         <Grid Background="PaleTurquoise">
           <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -85,7 +85,7 @@
       </wiz:WizardStep>
 
       <wiz:WizardStep x:Name="greenStep"
-                      SkipButtonVisibility="Collapsed">
+                      wiz:Wizard.SkipButtonVisibility="Collapsed">
         <Grid Background="LightGreen">
           <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -97,8 +97,7 @@
         </Grid>
       </wiz:WizardStep>
 
-      <wiz:WizardStep ForwardButtonTitle="Finish"
-                      SkipButtonVisibility="Collapsed">
+      <wiz:WizardStep wiz:Wizard.SkipButtonVisibility="Collapsed">
         <Grid Background="Tomato">
           <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
