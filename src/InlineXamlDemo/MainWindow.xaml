@@ -30,8 +30,14 @@
 
   <Grid>
 
-    <wiz:Wizard TransitionButtonsHorizontalAlignment="Right"
+    <wiz:Wizard HelpButtonVisibility="Visible"
+                CancelButtonVisibility="Visible"
+                SummaryVisibility="Collapsed"
+                TransitionButtonsHorizontalAlignment="Right"
+                TransitionButtonsVerticalAlignment="Top"
                 NavigationBlockMinHeight="50"
+                SummaryMargin="0"
+                SummaryVerticalAlignment="Bottom"
                 IsTransitionAnimationEnabled="False"
                 SelectedIndex="0"
                 AllowNavigationOnSummaryItemClick="True"

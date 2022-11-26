@@ -16,107 +16,128 @@ namespace WpfWizard.Controls
         public static readonly DependencyProperty TransitionButtonsVerticalAlignmentProperty = DependencyProperty.Register(nameof(TransitionButtonsVerticalAlignment), typeof(VerticalAlignment), typeof(Wizard), new PropertyMetadata(VerticalAlignment.Bottom));
         public static readonly DependencyProperty TransitionButtonsHorizontalAlignmentProperty = DependencyProperty.Register(nameof(TransitionButtonsHorizontalAlignment), typeof(HorizontalAlignment), typeof(Wizard), new PropertyMetadata(HorizontalAlignment.Right));
         public static readonly DependencyProperty HelpButtonHorizontalAlignmentProperty = DependencyProperty.Register(nameof(HelpButtonHorizontalAlignment), typeof(HorizontalAlignment), typeof(Wizard), new PropertyMetadata(HorizontalAlignment.Left));
+        public static readonly DependencyProperty CancelButtonHorizontalAlignmentProperty = DependencyProperty.Register(nameof(CancelButtonHorizontalAlignment), typeof(HorizontalAlignment), typeof(Wizard), new PropertyMetadata(HorizontalAlignment.Right));
 
         // These properties were formerly defined in WizardStep
         public static readonly DependencyProperty BackButtonStyleProperty = DependencyProperty.Register(nameof(BackButtonStyle), typeof(Style), typeof(Wizard));
         public static readonly DependencyProperty SkipButtonStyleProperty = DependencyProperty.Register(nameof(SkipButtonStyle), typeof(Style), typeof(Wizard));
         public static readonly DependencyProperty ForwardButtonStyleProperty = DependencyProperty.Register(nameof(ForwardButtonStyle), typeof(Style), typeof(Wizard));
         public static readonly DependencyProperty HelpButtonStyleProperty = DependencyProperty.Register(nameof(HelpButtonStyle), typeof(Style), typeof(Wizard));
+        public static readonly DependencyProperty CancelButtonStyleProperty = DependencyProperty.Register(nameof(CancelButtonStyle), typeof(Style), typeof(Wizard));
 
         public static readonly DependencyProperty BackButtonIconProperty = DependencyProperty.Register(nameof(BackButtonIcon), typeof(object), typeof(Wizard));
         public static readonly DependencyProperty SkipButtonIconProperty = DependencyProperty.Register(nameof(SkipButtonIcon), typeof(object), typeof(Wizard));
         public static readonly DependencyProperty ForwardButtonIconProperty = DependencyProperty.Register(nameof(ForwardButtonIcon), typeof(object), typeof(Wizard));
         public static readonly DependencyProperty HelpButtonIconProperty = DependencyProperty.Register(nameof(HelpButtonIcon), typeof(object), typeof(Wizard));
+        public static readonly DependencyProperty CancelButtonIconProperty = DependencyProperty.Register(nameof(CancelButtonIcon), typeof(object), typeof(Wizard));
 
         public static readonly DependencyProperty BackButtonForegroundProperty = DependencyProperty.Register(nameof(BackButtonForeground), typeof(Brush), typeof(Wizard), new PropertyMetadata(Brushes.Black));
         public static readonly DependencyProperty SkipButtonForegroundProperty = DependencyProperty.Register(nameof(SkipButtonForeground), typeof(Brush), typeof(Wizard), new PropertyMetadata(Brushes.Black));
         public static readonly DependencyProperty ForwardButtonForegroundProperty = DependencyProperty.Register(nameof(ForwardButtonForeground), typeof(Brush), typeof(Wizard), new PropertyMetadata(Brushes.Black));
         public static readonly DependencyProperty HelpButtonForegroundProperty = DependencyProperty.Register(nameof(HelpButtonForeground), typeof(Brush), typeof(Wizard), new PropertyMetadata(Brushes.Black));
+        public static readonly DependencyProperty CancelButtonForegroundProperty = DependencyProperty.Register(nameof(CancelButtonForeground), typeof(Brush), typeof(Wizard), new PropertyMetadata(Brushes.Black));
 
         public static readonly DependencyProperty BackButtonBackgroundProperty = DependencyProperty.Register(nameof(BackButtonBackground), typeof(Brush), typeof(Wizard), new PropertyMetadata(Brushes.Transparent));
         public static readonly DependencyProperty SkipButtonBackgroundProperty = DependencyProperty.Register(nameof(SkipButtonBackground), typeof(Brush), typeof(Wizard), new PropertyMetadata(Brushes.Transparent));
         public static readonly DependencyProperty ForwardButtonBackgroundProperty = DependencyProperty.Register(nameof(ForwardButtonBackground), typeof(Brush), typeof(Wizard), new PropertyMetadata(Brushes.Transparent));
         public static readonly DependencyProperty HelpButtonBackgroundProperty = DependencyProperty.Register(nameof(HelpButtonBackground), typeof(Brush), typeof(Wizard), new PropertyMetadata(Brushes.Transparent));
+        public static readonly DependencyProperty CancelButtonBackgroundProperty = DependencyProperty.Register(nameof(CancelButtonBackground), typeof(Brush), typeof(Wizard), new PropertyMetadata(Brushes.Transparent));
 
         public static readonly DependencyProperty BackButtonMouseMouseOverBackgroundProperty = DependencyProperty.Register(nameof(BackButtonMouseMouseOverBackground), typeof(Brush), typeof(Wizard));
         public static readonly DependencyProperty SkipButtonMouseMouseOverBackgroundProperty = DependencyProperty.Register(nameof(SkipButtonMouseMouseOverBackground), typeof(Brush), typeof(Wizard));
         public static readonly DependencyProperty ForwardButtonMouseMouseOverBackgroundProperty = DependencyProperty.Register(nameof(ForwardButtonMouseMouseOverBackground), typeof(Brush), typeof(Wizard));
         public static readonly DependencyProperty HelpButtonMouseMouseOverBackgroundProperty = DependencyProperty.Register(nameof(HelpButtonMouseMouseOverBackground), typeof(Brush), typeof(Wizard));
+        public static readonly DependencyProperty CancelButtonMouseMouseOverBackgroundProperty = DependencyProperty.Register(nameof(CancelButtonMouseMouseOverBackground), typeof(Brush), typeof(Wizard));
 
         public static readonly DependencyProperty BackButtonBorderBrushProperty = DependencyProperty.Register(nameof(BackButtonBorderBrush), typeof(Brush), typeof(Wizard));
         public static readonly DependencyProperty SkipButtonBorderBrushProperty = DependencyProperty.Register(nameof(SkipButtonBorderBrush), typeof(Brush), typeof(Wizard));
         public static readonly DependencyProperty ForwardButtonBorderBrushProperty = DependencyProperty.Register(nameof(ForwardButtonBorderBrush), typeof(Brush), typeof(Wizard));
         public static readonly DependencyProperty HelpButtonBorderBrushProperty = DependencyProperty.Register(nameof(HelpButtonBorderBrush), typeof(Brush), typeof(Wizard));
+        public static readonly DependencyProperty CancelButtonBorderBrushProperty = DependencyProperty.Register(nameof(CancelButtonBorderBrush), typeof(Brush), typeof(Wizard));
 
         public static readonly DependencyProperty BackButtonBorderThicknessProperty = DependencyProperty.Register(nameof(BackButtonBorderThickness), typeof(Thickness), typeof(Wizard));
         public static readonly DependencyProperty SkipButtonBorderThicknessProperty = DependencyProperty.Register(nameof(SkipButtonBorderThickness), typeof(Thickness), typeof(Wizard));
         public static readonly DependencyProperty ForwardButtonBorderThicknessProperty = DependencyProperty.Register(nameof(ForwardButtonBorderThickness), typeof(Thickness), typeof(Wizard));
         public static readonly DependencyProperty HelpButtonBorderThicknessProperty = DependencyProperty.Register(nameof(HelpButtonBorderThickness), typeof(Thickness), typeof(Wizard));
+        public static readonly DependencyProperty CancelButtonBorderThicknessProperty = DependencyProperty.Register(nameof(CancelButtonBorderThickness), typeof(Thickness), typeof(Wizard));
 
         public static readonly DependencyProperty BackButtonMinWidthProperty = DependencyProperty.Register(nameof(BackButtonMinWidth), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(0.0));
         public static readonly DependencyProperty SkipButtonMinWidthProperty = DependencyProperty.Register(nameof(SkipButtonMinWidth), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(0.0));
         public static readonly DependencyProperty ForwardButtonMinWidthProperty = DependencyProperty.Register(nameof(ForwardButtonMinWidth), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(0.0));
         public static readonly DependencyProperty HelpButtonMinWidthProperty = DependencyProperty.Register(nameof(HelpButtonMinWidth), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(0.0));
+        public static readonly DependencyProperty CancelButtonMinWidthProperty = DependencyProperty.Register(nameof(CancelButtonMinWidth), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(0.0));
 
         public static readonly DependencyProperty BackButtonMinHeightProperty = DependencyProperty.Register(nameof(BackButtonMinHeight), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(0.0));
         public static readonly DependencyProperty SkipButtonMinHeightProperty = DependencyProperty.Register(nameof(SkipButtonMinHeight), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(0.0));
         public static readonly DependencyProperty ForwardButtonMinHeightProperty = DependencyProperty.Register(nameof(ForwardButtonMinHeight), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(0.0));
         public static readonly DependencyProperty HelpButtonMinHeightProperty = DependencyProperty.Register(nameof(HelpButtonMinHeight), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(0.0));
+        public static readonly DependencyProperty CancelButtonMinHeightProperty = DependencyProperty.Register(nameof(CancelButtonMinHeight), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(0.0));
 
         public static readonly DependencyProperty BackButtonWidthProperty = DependencyProperty.Register(nameof(BackButtonWidth), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(double.NaN));
         public static readonly DependencyProperty SkipButtonWidthProperty = DependencyProperty.Register(nameof(SkipButtonWidth), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(double.NaN));
         public static readonly DependencyProperty ForwardButtonWidthProperty = DependencyProperty.Register(nameof(ForwardButtonWidth), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(double.NaN));
         public static readonly DependencyProperty HelpButtonWidthProperty = DependencyProperty.Register(nameof(HelpButtonWidth), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(double.NaN));
+        public static readonly DependencyProperty CancelButtonWidthProperty = DependencyProperty.Register(nameof(CancelButtonWidth), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(double.NaN));
 
         public static readonly DependencyProperty BackButtonHeightProperty = DependencyProperty.Register(nameof(BackButtonHeight), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(double.NaN));
         public static readonly DependencyProperty SkipButtonHeightProperty = DependencyProperty.Register(nameof(SkipButtonHeight), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(double.NaN));
         public static readonly DependencyProperty ForwardButtonHeightProperty = DependencyProperty.Register(nameof(ForwardButtonHeight), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(double.NaN));
         public static readonly DependencyProperty HelpButtonHeightProperty = DependencyProperty.Register(nameof(HelpButtonHeight), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(double.NaN));
+        public static readonly DependencyProperty CancelButtonHeightProperty = DependencyProperty.Register(nameof(CancelButtonHeight), typeof(double), typeof(Wizard), new FrameworkPropertyMetadata(double.NaN));
 
         public static readonly DependencyProperty BackButtonMaxWidthProperty = DependencyProperty.Register(nameof(BackButtonMaxWidth), typeof(double), typeof(Wizard), new PropertyMetadata(double.PositiveInfinity));
         public static readonly DependencyProperty SkipButtonMaxWidthProperty = DependencyProperty.Register(nameof(SkipButtonMaxWidth), typeof(double), typeof(Wizard), new PropertyMetadata(double.PositiveInfinity));
         public static readonly DependencyProperty ForwardButtonMaxWidthProperty = DependencyProperty.Register(nameof(ForwardButtonMaxWidth), typeof(double), typeof(Wizard), new PropertyMetadata(double.PositiveInfinity));
         public static readonly DependencyProperty HelpButtonMaxWidthProperty = DependencyProperty.Register(nameof(HelpButtonMaxWidth), typeof(double), typeof(Wizard), new PropertyMetadata(double.PositiveInfinity));
+        public static readonly DependencyProperty CancelButtonMaxWidthProperty = DependencyProperty.Register(nameof(CancelButtonMaxWidth), typeof(double), typeof(Wizard), new PropertyMetadata(double.PositiveInfinity));
 
         public static readonly DependencyProperty BackButtonMaxHeightProperty = DependencyProperty.Register(nameof(BackButtonMaxHeight), typeof(double), typeof(Wizard), new PropertyMetadata(double.PositiveInfinity));
         public static readonly DependencyProperty SkipButtonMaxHeightProperty = DependencyProperty.Register(nameof(SkipButtonMaxHeight), typeof(double), typeof(Wizard), new PropertyMetadata(double.PositiveInfinity));
         public static readonly DependencyProperty ForwardButtonMaxHeightProperty = DependencyProperty.Register(nameof(ForwardButtonMaxHeight), typeof(double), typeof(Wizard), new PropertyMetadata(double.PositiveInfinity));
         public static readonly DependencyProperty HelpButtonMaxHeightProperty = DependencyProperty.Register(nameof(HelpButtonMaxHeight), typeof(double), typeof(Wizard), new PropertyMetadata(double.PositiveInfinity));
+        public static readonly DependencyProperty CancelButtonMaxHeightProperty = DependencyProperty.Register(nameof(CancelButtonMaxHeight), typeof(double), typeof(Wizard), new PropertyMetadata(double.PositiveInfinity));
 
         public static readonly DependencyProperty BackButtonMarginProperty = DependencyProperty.Register(nameof(BackButtonMargin), typeof(Thickness), typeof(Wizard));
         public static readonly DependencyProperty SkipButtonMarginProperty = DependencyProperty.Register(nameof(SkipButtonMargin), typeof(Thickness), typeof(Wizard));
         public static readonly DependencyProperty ForwardButtonMarginProperty = DependencyProperty.Register(nameof(ForwardButtonMargin), typeof(Thickness), typeof(Wizard));
         public static readonly DependencyProperty HelpButtonMarginProperty = DependencyProperty.Register(nameof(HelpButtonMargin), typeof(Thickness), typeof(Wizard));
+        public static readonly DependencyProperty CancelButtonMarginProperty = DependencyProperty.Register(nameof(CancelButtonMargin), typeof(Thickness), typeof(Wizard));
 
         public static readonly DependencyProperty BackButtonCornerRadiusProperty = DependencyProperty.Register(nameof(BackButtonCornerRadius), typeof(CornerRadius), typeof(Wizard));
         public static readonly DependencyProperty SkipButtonCornerRadiusProperty = DependencyProperty.Register(nameof(SkipButtonCornerRadius), typeof(CornerRadius), typeof(Wizard));
         public static readonly DependencyProperty ForwardButtonCornerRadiusProperty = DependencyProperty.Register(nameof(ForwardButtonCornerRadius), typeof(CornerRadius), typeof(Wizard));
         public static readonly DependencyProperty HelpButtonCornerRadiusProperty = DependencyProperty.Register(nameof(HelpButtonCornerRadius), typeof(CornerRadius), typeof(Wizard));
+        public static readonly DependencyProperty CancelButtonCornerRadiusProperty = DependencyProperty.Register(nameof(CancelButtonCornerRadius), typeof(CornerRadius), typeof(Wizard));
 
         public static readonly DependencyProperty BackButtonHorizontalContentAlignmentProperty = DependencyProperty.Register(nameof(BackButtonHorizontalContentAlignment), typeof(HorizontalAlignment), typeof(Wizard));
         public static readonly DependencyProperty SkipButtonHorizontalContentAlignmentProperty = DependencyProperty.Register(nameof(SkipButtonHorizontalContentAlignment), typeof(HorizontalAlignment), typeof(Wizard));
         public static readonly DependencyProperty ForwardButtonHorizontalContentAlignmentProperty = DependencyProperty.Register(nameof(ForwardButtonHorizontalContentAlignment), typeof(HorizontalAlignment), typeof(Wizard));
         public static readonly DependencyProperty HelpButtonHorizontalContentAlignmentProperty = DependencyProperty.Register(nameof(HelpButtonHorizontalContentAlignment), typeof(HorizontalAlignment), typeof(Wizard));
+        public static readonly DependencyProperty CancelButtonHorizontalContentAlignmentProperty = DependencyProperty.Register(nameof(CancelButtonHorizontalContentAlignment), typeof(HorizontalAlignment), typeof(Wizard));
 
         public static readonly DependencyProperty BackButtonVerticalContentAlignmentProperty = DependencyProperty.Register(nameof(BackButtonVerticalContentAlignment), typeof(VerticalAlignment), typeof(Wizard));
         public static readonly DependencyProperty SkipButtonVerticalContentAlignmentProperty = DependencyProperty.Register(nameof(SkipButtonVerticalContentAlignment), typeof(VerticalAlignment), typeof(Wizard));
         public static readonly DependencyProperty ForwardButtonVerticalContentAlignmentProperty = DependencyProperty.Register(nameof(ForwardButtonVerticalContentAlignment), typeof(VerticalAlignment), typeof(Wizard));
         public static readonly DependencyProperty HelpButtonVerticalContentAlignmentProperty = DependencyProperty.Register(nameof(HelpButtonVerticalContentAlignment), typeof(VerticalAlignment), typeof(Wizard));
+        public static readonly DependencyProperty CancelButtonVerticalContentAlignmentProperty = DependencyProperty.Register(nameof(CancelButtonVerticalContentAlignment), typeof(VerticalAlignment), typeof(Wizard));
 
         public static readonly DependencyProperty BackButtonFontSizeProperty = DependencyProperty.Register(nameof(BackButtonFontSize), typeof(double), typeof(Wizard));
         public static readonly DependencyProperty SkipButtonFontSizeProperty = DependencyProperty.Register(nameof(SkipButtonFontSize), typeof(double), typeof(Wizard));
         public static readonly DependencyProperty ForwardButtonFontSizeProperty = DependencyProperty.Register(nameof(ForwardButtonFontSize), typeof(double), typeof(Wizard));
         public static readonly DependencyProperty HelpButtonFontSizeProperty = DependencyProperty.Register(nameof(HelpButtonFontSize), typeof(double), typeof(Wizard));
+        public static readonly DependencyProperty CancelButtonFontSizeProperty = DependencyProperty.Register(nameof(CancelButtonFontSize), typeof(double), typeof(Wizard));
 
         public static readonly DependencyProperty BackButtonFontWeightProperty = DependencyProperty.Register(nameof(BackButtonFontWeight), typeof(FontWeight), typeof(Wizard));
         public static readonly DependencyProperty SkipButtonFontWeightProperty = DependencyProperty.Register(nameof(SkipButtonFontWeight), typeof(FontWeight), typeof(Wizard));
         public static readonly DependencyProperty ForwardButtonFontWeightProperty = DependencyProperty.Register(nameof(ForwardButtonFontWeight), typeof(FontWeight), typeof(Wizard));
         public static readonly DependencyProperty HelpButtonFontWeightProperty = DependencyProperty.Register(nameof(HelpButtonFontWeight), typeof(FontWeight), typeof(Wizard));
+        public static readonly DependencyProperty CancelButtonFontWeightProperty = DependencyProperty.Register(nameof(CancelButtonFontWeight), typeof(FontWeight), typeof(Wizard));
 
         public static readonly DependencyProperty BackButtonFontStyleProperty = DependencyProperty.Register(nameof(BackButtonFontStyle), typeof(FontStyle), typeof(Wizard));
         public static readonly DependencyProperty SkipButtonFontStyleProperty = DependencyProperty.Register(nameof(SkipButtonFontStyle), typeof(FontStyle), typeof(Wizard));
         public static readonly DependencyProperty ForwardButtonFontStyleProperty = DependencyProperty.Register(nameof(ForwardButtonFontStyle), typeof(FontStyle), typeof(Wizard));
         public static readonly DependencyProperty HelpButtonFontStyleProperty = DependencyProperty.Register(nameof(HelpButtonFontStyle), typeof(FontStyle), typeof(Wizard));
+        public static readonly DependencyProperty CancelButtonFontStyleProperty = DependencyProperty.Register(nameof(CancelButtonFontStyle), typeof(FontStyle), typeof(Wizard));
 
         // The following properties are defined as attached properties, so that they
         // can be applied to Wizard and WizardStep.
@@ -125,21 +146,25 @@ namespace WpfWizard.Controls
         public static readonly DependencyProperty SkipButtonTooltipProperty       = DependencyProperty.RegisterAttached("SkipButtonTooltip",       typeof(object), typeof(Wizard));
         public static readonly DependencyProperty ForwardButtonTooltipProperty    = DependencyProperty.RegisterAttached("ForwardButtonTooltip",    typeof(object), typeof(Wizard));
         public static readonly DependencyProperty HelpButtonTooltipProperty       = DependencyProperty.RegisterAttached("HelpButtonTooltip",       typeof(object), typeof(Wizard));
+        public static readonly DependencyProperty CancelButtonTooltipProperty     = DependencyProperty.RegisterAttached("CancelButtonTooltip",     typeof(object), typeof(Wizard));
 
         public static readonly DependencyProperty BackButtonVisibilityProperty    = DependencyProperty.RegisterAttached("BackButtonVisibility",    typeof(Visibility), typeof(Wizard));
         public static readonly DependencyProperty SkipButtonVisibilityProperty    = DependencyProperty.RegisterAttached("SkipButtonVisibility",    typeof(Visibility), typeof(Wizard));
         public static readonly DependencyProperty ForwardButtonVisibilityProperty = DependencyProperty.RegisterAttached("ForwardButtonVisibility", typeof(Visibility), typeof(Wizard));
         public static readonly DependencyProperty HelpButtonVisibilityProperty    = DependencyProperty.RegisterAttached("HelpButtonVisibility",    typeof(Visibility), typeof(Wizard));
+        public static readonly DependencyProperty CancelButtonVisibilityProperty  = DependencyProperty.RegisterAttached("CancelButtonVisibility",  typeof(Visibility), typeof(Wizard));
 
         public static readonly DependencyProperty BackButtonIsEnabledProperty     = DependencyProperty.RegisterAttached("BackButtonIsEnabled",     typeof(bool), typeof(Wizard));
         public static readonly DependencyProperty SkipButtonIsEnabledProperty     = DependencyProperty.RegisterAttached("SkipButtonIsEnabled",     typeof(bool), typeof(Wizard));
         public static readonly DependencyProperty ForwardButtonIsEnabledProperty  = DependencyProperty.RegisterAttached("ForwardButtonIsEnabled",  typeof(bool), typeof(Wizard));
         public static readonly DependencyProperty HelpButtonIsEnabledProperty     = DependencyProperty.RegisterAttached("HelpButtonIsEnabled",     typeof(bool), typeof(Wizard));
+        public static readonly DependencyProperty CancelButtonIsEnabledProperty   = DependencyProperty.RegisterAttached("CancelButtonIsEnabled",   typeof(bool), typeof(Wizard));
 
         public static readonly DependencyProperty BackButtonTitleProperty         = DependencyProperty.RegisterAttached("BackButtonTitle",         typeof(string), typeof(Wizard));
         public static readonly DependencyProperty SkipButtonTitleProperty         = DependencyProperty.RegisterAttached("SkipButtonTitle",         typeof(string), typeof(Wizard));
         public static readonly DependencyProperty ForwardButtonTitleProperty      = DependencyProperty.RegisterAttached("ForwardButtonTitle",      typeof(string), typeof(Wizard));
         public static readonly DependencyProperty HelpButtonTitleProperty         = DependencyProperty.RegisterAttached("HelpButtonTitle",         typeof(string), typeof(Wizard));
+        public static readonly DependencyProperty CancelButtonTitleProperty       = DependencyProperty.RegisterAttached("CancelButtonTitle",       typeof(string), typeof(Wizard));
 
         public VerticalAlignment TransitionButtonsVerticalAlignment
         {
@@ -157,6 +182,12 @@ namespace WpfWizard.Controls
         {
             get { return (HorizontalAlignment)this.GetValue(HelpButtonHorizontalAlignmentProperty); }
             set { this.SetValue(HelpButtonHorizontalAlignmentProperty, value); }
+        }
+
+        public HorizontalAlignment CancelButtonHorizontalAlignment
+        {
+            get { return (HorizontalAlignment)this.GetValue(CancelButtonHorizontalAlignmentProperty); }
+            set { this.SetValue(CancelButtonHorizontalAlignmentProperty, value); }
         }
 
         public Style BackButtonStyle
@@ -181,6 +212,12 @@ namespace WpfWizard.Controls
         {
             get { return (Style)this.GetValue(HelpButtonStyleProperty); }
             set { this.SetValue(HelpButtonStyleProperty, value); }
+        }
+
+        public Style CancelButtonStyle
+        {
+            get { return (Style)this.GetValue(CancelButtonStyleProperty); }
+            set { this.SetValue(CancelButtonStyleProperty, value); }
         }
 
         /* Icon */
@@ -208,6 +245,12 @@ namespace WpfWizard.Controls
             set { this.SetValue(HelpButtonIconProperty, value); }
         }
 
+        public object CancelButtonIcon
+        {
+            get { return this.GetValue(CancelButtonIconProperty); }
+            set { this.SetValue(CancelButtonIconProperty, value); }
+        }
+
         /* Foreground */
         public Brush BackButtonForeground
         {
@@ -231,6 +274,12 @@ namespace WpfWizard.Controls
         {
             get { return (Brush)this.GetValue(HelpButtonForegroundProperty); }
             set { this.SetValue(HelpButtonForegroundProperty, value); }
+        }
+
+        public Brush CancelButtonForeground
+        {
+            get { return (Brush)this.GetValue(CancelButtonForegroundProperty); }
+            set { this.SetValue(CancelButtonForegroundProperty, value); }
         }
 
         /* Background */
@@ -258,6 +307,12 @@ namespace WpfWizard.Controls
             set { this.SetValue(HelpButtonBackgroundProperty, value); }
         }
 
+        public Brush CancelButtonBackground
+        {
+            get { return (Brush)this.GetValue(CancelButtonBackgroundProperty); }
+            set { this.SetValue(CancelButtonBackgroundProperty, value); }
+        }
+
         /* Mouse Over Background */
         public Brush BackButtonMouseMouseOverBackground
         {
@@ -281,6 +336,12 @@ namespace WpfWizard.Controls
         {
             get { return (Brush)this.GetValue(HelpButtonMouseMouseOverBackgroundProperty); }
             set { this.SetValue(HelpButtonMouseMouseOverBackgroundProperty, value); }
+        }
+
+        public Brush CancelButtonMouseMouseOverBackground
+        {
+            get { return (Brush)this.GetValue(CancelButtonMouseMouseOverBackgroundProperty); }
+            set { this.SetValue(CancelButtonMouseMouseOverBackgroundProperty, value); }
         }
 
         /* Border Brush */
@@ -308,6 +369,12 @@ namespace WpfWizard.Controls
             set { this.SetValue(HelpButtonBorderBrushProperty, value); }
         }
 
+        public Brush CancelButtonBorderBrush
+        {
+            get { return (Brush)this.GetValue(CancelButtonBorderBrushProperty); }
+            set { this.SetValue(CancelButtonBorderBrushProperty, value); }
+        }
+
         /* Border Thickness */
         public Thickness BackButtonBorderThickness
         {
@@ -331,6 +398,12 @@ namespace WpfWizard.Controls
         {
             get { return (Thickness)this.GetValue(HelpButtonBorderThicknessProperty); }
             set { this.SetValue(HelpButtonBorderThicknessProperty, value); }
+        }
+
+        public Thickness CancelButtonBorderThickness
+        {
+            get { return (Thickness)this.GetValue(CancelButtonBorderThicknessProperty); }
+            set { this.SetValue(CancelButtonBorderThicknessProperty, value); }
         }
 
         /* Min Width */
@@ -358,6 +431,12 @@ namespace WpfWizard.Controls
             set { this.SetValue(HelpButtonMinWidthProperty, value); }
         }
 
+        public double CancelButtonMinWidth
+        {
+            get { return (double)this.GetValue(CancelButtonMinWidthProperty); }
+            set { this.SetValue(CancelButtonMinWidthProperty, value); }
+        }
+
         /* Min Height */
         public double BackButtonMinHeight
         {
@@ -381,6 +460,12 @@ namespace WpfWizard.Controls
         {
             get { return (double)this.GetValue(HelpButtonMinHeightProperty); }
             set { this.SetValue(HelpButtonMinHeightProperty, value); }
+        }
+
+        public double CancelButtonMinHeight
+        {
+            get { return (double)this.GetValue(CancelButtonMinHeightProperty); }
+            set { this.SetValue(CancelButtonMinHeightProperty, value); }
         }
 
         /* Width */
@@ -408,6 +493,12 @@ namespace WpfWizard.Controls
             set { this.SetValue(HelpButtonWidthProperty, value); }
         }
 
+        public double CancelButtonWidth
+        {
+            get { return (double)this.GetValue(CancelButtonWidthProperty); }
+            set { this.SetValue(CancelButtonWidthProperty, value); }
+        }
+
         /* Height */
         public double BackButtonHeight
         {
@@ -431,6 +522,12 @@ namespace WpfWizard.Controls
         {
             get { return (double)this.GetValue(HelpButtonHeightProperty); }
             set { this.SetValue(HelpButtonHeightProperty, value); }
+        }
+
+        public double CancelButtonHeight
+        {
+            get { return (double)this.GetValue(CancelButtonHeightProperty); }
+            set { this.SetValue(CancelButtonHeightProperty, value); }
         }
 
         /* Max Width */
@@ -458,6 +555,12 @@ namespace WpfWizard.Controls
             set { this.SetValue(HelpButtonMaxWidthProperty, value); }
         }
 
+        public double CancelButtonMaxWidth
+        {
+            get { return (double)this.GetValue(CancelButtonMaxWidthProperty); }
+            set { this.SetValue(CancelButtonMaxWidthProperty, value); }
+        }
+
         /* Max Height */
         public double BackButtonMaxHeight
         {
@@ -481,6 +584,12 @@ namespace WpfWizard.Controls
         {
             get { return (double)this.GetValue(HelpButtonMaxHeightProperty); }
             set { this.SetValue(HelpButtonMaxHeightProperty, value); }
+        }
+
+        public double CancelButtonMaxHeight
+        {
+            get { return (double)this.GetValue(CancelButtonMaxHeightProperty); }
+            set { this.SetValue(CancelButtonMaxHeightProperty, value); }
         }
 
         /* Margin */
@@ -508,6 +617,12 @@ namespace WpfWizard.Controls
             set { this.SetValue(HelpButtonMarginProperty, value); }
         }
 
+        public Thickness CancelButtonMargin
+        {
+            get { return (Thickness)this.GetValue(CancelButtonMarginProperty); }
+            set { this.SetValue(CancelButtonMarginProperty, value); }
+        }
+
         /* Corner Radius */
         public CornerRadius BackButtonCornerRadius
         {
@@ -531,6 +646,12 @@ namespace WpfWizard.Controls
         {
             get { return (CornerRadius)this.GetValue(HelpButtonCornerRadiusProperty); }
             set { this.SetValue(HelpButtonCornerRadiusProperty, value); }
+        }
+
+        public CornerRadius CancelButtonCornerRadius
+        {
+            get { return (CornerRadius)this.GetValue(CancelButtonCornerRadiusProperty); }
+            set { this.SetValue(CancelButtonCornerRadiusProperty, value); }
         }
 
         /* Horizontal Content Alignment */
@@ -558,6 +679,12 @@ namespace WpfWizard.Controls
             set { this.SetValue(HelpButtonHorizontalContentAlignmentProperty, value); }
         }
 
+        public HorizontalAlignment CancelButtonHorizontalContentAlignment
+        {
+            get { return (HorizontalAlignment)this.GetValue(CancelButtonHorizontalContentAlignmentProperty); }
+            set { this.SetValue(CancelButtonHorizontalContentAlignmentProperty, value); }
+        }
+
         /* Vertical Content Alignment */
         public VerticalAlignment BackButtonVerticalContentAlignment
         {
@@ -581,6 +708,12 @@ namespace WpfWizard.Controls
         {
             get { return (VerticalAlignment)this.GetValue(HelpButtonVerticalContentAlignmentProperty); }
             set { this.SetValue(HelpButtonVerticalContentAlignmentProperty, value); }
+        }
+
+        public VerticalAlignment CancelButtonVerticalContentAlignment
+        {
+            get { return (VerticalAlignment)this.GetValue(CancelButtonVerticalContentAlignmentProperty); }
+            set { this.SetValue(CancelButtonVerticalContentAlignmentProperty, value); }
         }
 
         /* Font Size */
@@ -608,6 +741,12 @@ namespace WpfWizard.Controls
             set { this.SetValue(HelpButtonFontSizeProperty, value); }
         }
 
+        public double CancelButtonFontSize
+        {
+            get { return (double)this.GetValue(CancelButtonFontSizeProperty); }
+            set { this.SetValue(CancelButtonFontSizeProperty, value); }
+        }
+
         /* Font Weight */
         public FontWeight BackButtonFontWeight
         {
@@ -631,6 +770,12 @@ namespace WpfWizard.Controls
         {
             get { return (FontWeight)this.GetValue(HelpButtonFontWeightProperty); }
             set { this.SetValue(HelpButtonFontWeightProperty, value); }
+        }
+
+        public FontWeight CancelButtonFontWeight
+        {
+            get { return (FontWeight)this.GetValue(CancelButtonFontWeightProperty); }
+            set { this.SetValue(CancelButtonFontWeightProperty, value); }
         }
 
         /* Font Style */
@@ -658,6 +803,12 @@ namespace WpfWizard.Controls
             set { this.SetValue(HelpButtonFontStyleProperty, value); }
         }
 
+        public FontStyle CancelButtonFontStyle
+        {
+            get { return (FontStyle)this.GetValue(CancelButtonFontStyleProperty); }
+            set { this.SetValue(CancelButtonFontStyleProperty, value); }
+        }
+
         // The following properties are defined as attached properties, so that they
         // can be applied to Wizard and WizardStep.
 
@@ -674,6 +825,9 @@ namespace WpfWizard.Controls
         public static object GetHelpButtonTooltip(UIElement target) => (object)target.GetValue(HelpButtonTooltipProperty);
         public static void   SetHelpButtonTooltip(UIElement target, object value) => target.SetValue(HelpButtonTooltipProperty, value);
 
+        public static object GetCancelButtonTooltip(UIElement target) => (object)target.GetValue(CancelButtonTooltipProperty);
+        public static void   SetCancelButtonTooltip(UIElement target, object value) => target.SetValue(CancelButtonTooltipProperty, value);
+
 
         /* Visibility */
         public static Visibility GetBackButtonVisibility(UIElement target) => (Visibility)target.GetValue(BackButtonVisibilityProperty);
@@ -688,6 +842,10 @@ namespace WpfWizard.Controls
         public static Visibility GetHelpButtonVisibility(UIElement target) => (Visibility)target.GetValue(HelpButtonVisibilityProperty);
         public static void       SetHelpButtonVisibility(UIElement target, Visibility value) => target.SetValue(HelpButtonVisibilityProperty, value);
 
+        public static Visibility GetCancelButtonVisibility(UIElement target) => (Visibility)target.GetValue(CancelButtonVisibilityProperty);
+        public static void       SetCancelButtonVisibility(UIElement target, Visibility value) => target.SetValue(CancelButtonVisibilityProperty, value);
+
+
         /* IsEnabled */
         public static bool GetBackButtonIsEnabled(UIElement target) => (bool)target.GetValue(BackButtonIsEnabledProperty);
         public static void SetBackButtonIsEnabled(UIElement target, bool value) => target.SetValue(BackButtonIsEnabledProperty, value);
@@ -700,6 +858,9 @@ namespace WpfWizard.Controls
 
         public static bool GetHelpButtonIsEnabled(UIElement target) => (bool)target.GetValue(HelpButtonIsEnabledProperty);
         public static void SetHelpButtonIsEnabled(UIElement target, bool value) => target.SetValue(HelpButtonIsEnabledProperty, value);
+
+        public static bool GetCancelButtonIsEnabled(UIElement target) => (bool)target.GetValue(CancelButtonIsEnabledProperty);
+        public static void SetCancelButtonIsEnabled(UIElement target, bool value) => target.SetValue(CancelButtonIsEnabledProperty, value);
 
         /* Title */
         public static string GetBackButtonTitle(UIElement target) => (string)target.GetValue(BackButtonTitleProperty);
@@ -714,26 +875,33 @@ namespace WpfWizard.Controls
         public static string GetHelpButtonTitle(UIElement target) => (string)target.GetValue(HelpButtonTitleProperty);
         public static void   SetHelpButtonTitle(UIElement target, string value) => target.SetValue(HelpButtonTitleProperty, value);
 
+        public static string GetCancelButtonTitle(UIElement target) => (string)target.GetValue(CancelButtonTitleProperty);
+        public static void   SetCancelButtonTitle(UIElement target, string value) => target.SetValue(CancelButtonTitleProperty, value);
+
 
         public Visibility BackVisibility    => GetWithFallback ( BackButtonVisibilityProperty,    Visibility.Visible ) ;
         public Visibility SkipVisibility    => GetWithFallback ( SkipButtonVisibilityProperty,    Visibility.Visible ) ;
         public Visibility ForwardVisibility => GetWithFallback ( ForwardButtonVisibilityProperty, Visibility.Visible ) ;
-        public Visibility HelpVisibility    => GetWithFallback ( HelpButtonVisibilityProperty,    Visibility.Visible ) ;
-                                                                 
+        public Visibility HelpVisibility    => GetWithFallback ( HelpButtonVisibilityProperty,    Visibility.Collapsed ) ;
+        public Visibility CancelVisibility  => GetWithFallback ( CancelButtonVisibilityProperty,  Visibility.Collapsed ) ;
+
         public bool       BackIsEnabled     => GetWithFallback ( BackButtonIsEnabledProperty,     true);
         public bool       SkipIsEnabled     => GetWithFallback ( SkipButtonIsEnabledProperty,     true);
         public bool       ForwardIsEnabled  => GetWithFallback ( ForwardButtonIsEnabledProperty,  true);
         public bool       HelpIsEnabled     => GetWithFallback ( HelpButtonIsEnabledProperty,     true);
+        public bool       CancelIsEnabled   => GetWithFallback ( CancelButtonIsEnabledProperty,   true);
                                                                  
         public object     BackTooltip       => GetWithFallback ( BackButtonTooltipProperty,       (object)null);
         public object     SkipTooltip       => GetWithFallback ( SkipButtonTooltipProperty,       (object)null);
         public object     ForwardTooltip    => GetWithFallback ( ForwardButtonTooltipProperty,    (object)null);
         public object     HelpTooltip       => GetWithFallback ( HelpButtonTooltipProperty,       (object)null);
+        public object     CancelTooltip     => GetWithFallback ( CancelButtonTooltipProperty,     (object)null);
                                                                  
         public string     BackTitle         => GetWithFallback ( BackButtonTitleProperty,         "" ) ; 
         public string     SkipTitle         => GetWithFallback ( SkipButtonTitleProperty,         "Skip" ) ;
         public string     ForwardTitle      => GetWithFallback ( ForwardButtonTitleProperty,      "Next", "Finish" ) ;
         public string     HelpTitle         => GetWithFallback ( HelpButtonTitleProperty,         "Help" );
+        public string     CancelTitle       => GetWithFallback ( CancelButtonTitleProperty,       "Cancel" );
 
         private T GetWithFallback<T> ( DependencyProperty dp, T defaultValue )
         {

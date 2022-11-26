@@ -11,6 +11,7 @@
         TitleCharacterCasing="Normal"
         Height="480" 
         Width="700"
+        WindowStartupLocation="CenterScreen"
         x:Name="ThisWindow">
 
     <Grid>
@@ -25,17 +26,17 @@
         <controls:Wizard FinishCommand="{Binding CloseCommand, ElementName=ThisWindow}" SharedContext="{Binding SharedContext,  ElementName=ThisWindow}">
             <controls:Wizard.Resources>
                 <Style TargetType="controls:WizardStep" BasedOn="{StaticResource {x:Type controls:WizardStep}}">
-                    <Setter Property="SkipButtonVisibility" Value="Collapsed" />
+                    <Setter Property="controls:Wizard.SkipButtonVisibility" Value="Collapsed" />
                 </Style>
             </controls:Wizard.Resources>
 
            <!-- <controls:WizardStep BackButtonVisibility="Collapsed">
                 <simple:WelcomeView />
             </controls:WizardStep>-->
-            
-            <controls:WizardStep x:Name="WelcomeStep" ViewType="{x:Type simple:WelcomeView}" BackButtonVisibility="Collapsed" />
-            <controls:WizardStep x:Name="RegistrationStep" ViewType="{x:Type simple:RegistrationView}"  ForwardButtonIsEnabled="{Binding UnderlyingDataContext.MyIsEnabled, RelativeSource={RelativeSource Self}}"/>
-            <controls:WizardStep x:Name="SummaryStep" ViewType="{x:Type simple:RegistrationSummaryView}" ForwardButtonTitle="Finish" />
+
+            <controls:WizardStep x:Name="WelcomeStep" ViewType="{x:Type simple:WelcomeView}" controls:Wizard.BackButtonVisibility="Collapsed" />
+            <controls:WizardStep x:Name="RegistrationStep" ViewType="{x:Type simple:RegistrationView}"  controls:Wizard.ForwardButtonIsEnabled="{Binding UnderlyingDataContext.MyIsEnabled, RelativeSource={RelativeSource Self}}"/>
+            <controls:WizardStep x:Name="SummaryStep" ViewType="{x:Type simple:RegistrationSummaryView}" controls:Wizard.ForwardButtonTitle="Finish" />
 
         </controls:Wizard>
     </Grid>

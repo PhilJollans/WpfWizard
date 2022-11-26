@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Unity;
+using WpfWizard.Classes;
 
 namespace WizardDemo
 {
@@ -13,5 +15,10 @@ namespace WizardDemo
     /// </summary>
     public partial class App : Application
     {
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            var unityContainer = new UnityContainer();
+            WizardSettings.Instance.ViewResolver = type => unityContainer.Resolve(type);
+        }
     }
 }

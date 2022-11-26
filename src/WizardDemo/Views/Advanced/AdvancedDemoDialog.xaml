@@ -15,8 +15,8 @@
     <Grid>
         <controls:Wizard UseCircularNavigation="True">
             <controls:WizardStep ViewType="{x:Type advanced:BasicWizardSettingsView}" />
-            <controls:WizardStep ForwardButtonTooltip="Next"  />
-            <controls:WizardStep ForwardButtonTooltip="Finish">
+            <controls:WizardStep controls:Wizard.ForwardButtonTooltip="Next"  />
+            <controls:WizardStep controls:Wizard.ForwardButtonTooltip="Finish">
                 <controls:WizardStep.Content>
                     <TextBox></TextBox>
                 </controls:WizardStep.Content>

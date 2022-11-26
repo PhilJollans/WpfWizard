@@ -54,6 +54,14 @@
           Data="F1 M10,19H13V22H10V19M12,2C17.35,2.22 19.68,7.62 16.5,11.67C15.67,12.67 14.33,13.33 13.67,14.17C13,15 13,16 13,17H10C10,15.33 10,13.92 10.67,12.92C11.33,11.92 12.67,11.33 13.5,10.67C15.92,8.43 15.32,5.26 12,5A3,3 0 0,0 9,8H6A6,6 0 0,1 12,2Z"
           Stretch="Fill" />
 
+    <Path x:Key="DefaultCancelIcon"
+          x:Shared="False"
+          Height="{Binding (TextElement.FontSize), RelativeSource={RelativeSource Self}}" 
+          Margin="10,2,0,0"
+          Fill="{Binding (TextElement.Foreground), RelativeSource={RelativeSource Self}}"
+          Data="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" 
+          Stretch="Fill" />
+
     <Style x:Key="BackButtonStyle" TargetType="Button" BasedOn="{StaticResource CommonTriggersButtonStyle}">
         <Setter Property="MinWidth"                     Value="{Binding BackButtonMinWidth,                        RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
         <Setter Property="MinHeight"                    Value="{Binding BackButtonMinHeight,                       RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
@@ -290,6 +298,66 @@
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="{Binding HelpButtonMouseMouseOverBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="CancelButtonStyle" TargetType="Button" BasedOn="{StaticResource CommonTriggersButtonStyle}">
+        <Setter Property="MinWidth"                     Value="{Binding CancelButtonMinWidth,                     RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="MinHeight"                    Value="{Binding CancelButtonMinHeight,                    RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="Width"                        Value="{Binding CancelButtonWidth,                        RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="Height"                       Value="{Binding CancelButtonHeight,                       RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="MaxWidth"                     Value="{Binding CancelButtonMaxWidth,                     RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="MaxHeight"                    Value="{Binding CancelButtonMaxHeight,                    RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="Foreground"                   Value="{Binding CancelButtonForeground,                   RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="Background"                   Value="{Binding CancelButtonBackground,                   RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="BorderBrush"                  Value="{Binding CancelButtonBorderBrush,                  RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="BorderThickness"              Value="{Binding CancelButtonBorderThickness,              RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="Margin"                       Value="{Binding CancelButtonMargin,                       RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="FontSize"                     Value="{Binding CancelButtonFontSize,                     RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard} }" />
+        <Setter Property="FontWeight"                   Value="{Binding CancelButtonFontWeight,                   RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard} }" />
+        <Setter Property="FontStyle"                    Value="{Binding CancelButtonFontStyle,                    RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard} }" />
+        <Setter Property="Command"                      Value="{Binding CancelCommand,                            RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="HorizontalContentAlignment"   Value="{Binding CancelButtonHorizontalContentAlignment,   RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="VerticalContentAlignment"     Value="{Binding CancelButtonVerticalContentAlignment,     RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+
+        <Setter Property="ToolTip"    Value="{Binding CancelTooltip,    RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="Visibility" Value="{Binding CancelVisibility, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+        <Setter Property="IsEnabled"  Value="{Binding CancelIsEnabled,  RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="{Binding CancelButtonCornerRadius, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" 
+                            Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}">
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+
+                            <TextBlock Foreground="{TemplateBinding Foreground}"
+                                       Text="{Binding CancelTitle, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}"/>
+
+                            <ContentControl x:Name="PART_ButtonIcon" 
+                                            Content="{Binding CancelButtonIcon, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
+
+                        </StackPanel>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+
+                        <DataTrigger Binding="{Binding CancelButtonIcon, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" Value="{x:Null}">
+                            <Setter TargetName="PART_ButtonIcon" Property="Content" Value="{StaticResource DefaultCancelIcon}" />
+                        </DataTrigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{Binding CancelButtonMouseMouseOverBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" />
             </Trigger>
         </Style.Triggers>
     </Style>

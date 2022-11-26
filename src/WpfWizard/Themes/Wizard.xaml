@@ -31,13 +31,22 @@
 
                     <Button x:Name="PART_HelpButton"
                             Style="{TemplateBinding HelpButtonStyle}"
-                            HorizontalAlignment="{TemplateBinding HelpButtonHorizontalAlignment}"/>
+                            HorizontalAlignment="{TemplateBinding HelpButtonHorizontalAlignment}"
+                            VerticalAlignment="{TemplateBinding TransitionButtonsVerticalAlignment}" />
+
+                    <!-- For now I have placed the cancel button with the transition buttons -->
+                    <!--<Button x:Name="PART_CancelButton"
+                            Style="{TemplateBinding CancelButtonStyle}"
+                            HorizontalAlignment="{TemplateBinding CancelButtonHorizontalAlignment}"/>-->
 
                     <!-- Transition Buttons -->
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="{TemplateBinding TransitionButtonsHorizontalAlignment}" VerticalAlignment="{TemplateBinding TransitionButtonsVerticalAlignment}">
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="{TemplateBinding TransitionButtonsHorizontalAlignment}"
+                                VerticalAlignment="{TemplateBinding TransitionButtonsVerticalAlignment}">
                         <Button x:Name="PART_BackButton" Style="{TemplateBinding BackButtonStyle}"/>
                         <Button x:Name="PART_SkipButton" Style="{TemplateBinding SkipButtonStyle}" />
                         <Button x:Name="PART_ForwardButton" Style="{TemplateBinding ForwardButtonStyle}" />
+                        <Button x:Name="PART_CancelButton" Style="{TemplateBinding CancelButtonStyle}" />
                     </StackPanel>
 
                     <!-- Summary -->
@@ -79,6 +88,10 @@
                 <Setter TargetName="PART_HelpButton" Property="Style" Value="{StaticResource HelpButtonStyle}" />
             </Trigger>
 
+            <Trigger Property="CancelButtonStyle" Value="{x:Null}">
+                <Setter TargetName="PART_CancelButton" Property="Style" Value="{StaticResource CancelButtonStyle}" />
+            </Trigger>
+
         </ControlTemplate.Triggers>
         
     </ControlTemplate>
@@ -95,7 +108,7 @@
         <!-- Button styles originally in WizardStep -->
         <Setter Property="BackButtonHeight" Value="50" />
         <Setter Property="BackButtonMinWidth" Value="60" />
-        <Setter Property="BackButtonMargin" Value="25,10,5,10" />
+        <Setter Property="BackButtonMargin" Value="10,10,5,10" />
         <Setter Property="BackButtonForeground" Value="#CCFA6800" />
         <Setter Property="BackButtonBackground" Value="Transparent" />
         <Setter Property="BackButtonMouseMouseOverBackground" Value="#FF454545" />
@@ -109,7 +122,7 @@
 
         <Setter Property="SkipButtonHeight" Value="50" />
         <Setter Property="SkipButtonMinWidth" Value="70" />
-        <Setter Property="SkipButtonMargin" Value="5,10,0,10" />
+        <Setter Property="SkipButtonMargin" Value="5,10,5,10" />
         <Setter Property="SkipButtonForeground" Value="#CCFA6800" />
         <Setter Property="SkipButtonBackground" Value="Transparent" />
         <Setter Property="SkipButtonMouseMouseOverBackground" Value="#FF454545" />
@@ -123,7 +136,7 @@
 
         <Setter Property="ForwardButtonHeight" Value="50" />
         <Setter Property="ForwardButtonMinWidth" Value="150" />
-        <Setter Property="ForwardButtonMargin" Value="10,10,25,10" />
+        <Setter Property="ForwardButtonMargin" Value="5,10,10,10" />
         <Setter Property="ForwardButtonForeground" Value="White" />
         <Setter Property="ForwardButtonBackground" Value="#CCFA6800" />
         <Setter Property="ForwardButtonMouseMouseOverBackground" Value="#FF454545" />
@@ -137,7 +150,7 @@
 
         <Setter Property="HelpButtonHeight" Value="50" />
         <Setter Property="HelpButtonMinWidth" Value="150" />
-        <Setter Property="HelpButtonMargin" Value="25,10,25,10" />
+        <Setter Property="HelpButtonMargin" Value="10,10,10,10" />
         <Setter Property="HelpButtonForeground" Value="White" />
         <Setter Property="HelpButtonBackground" Value="#CCFA6800" />
         <Setter Property="HelpButtonMouseMouseOverBackground" Value="#FF454545" />
@@ -148,6 +161,20 @@
         <Setter Property="HelpButtonVerticalContentAlignment" Value="Center" />
         <Setter Property="HelpButtonFontSize" Value="14" />
         <Setter Property="HelpButtonFontWeight" Value="Bold" />
+
+        <Setter Property="CancelButtonHeight" Value="50" />
+        <Setter Property="CancelButtonMinWidth" Value="150" />
+        <Setter Property="CancelButtonMargin" Value="10,10,10,10" />
+        <Setter Property="CancelButtonForeground" Value="White" />
+        <Setter Property="CancelButtonBackground" Value="#CCFA6800" />
+        <Setter Property="CancelButtonMouseMouseOverBackground" Value="#FF454545" />
+        <Setter Property="CancelButtonBorderBrush" Value="#CCFA6800" />
+        <Setter Property="CancelButtonBorderThickness" Value="2" />
+        <Setter Property="CancelButtonCornerRadius" Value="3" />
+        <Setter Property="CancelButtonHorizontalContentAlignment" Value="Center" />
+        <Setter Property="CancelButtonVerticalContentAlignment" Value="Center" />
+        <Setter Property="CancelButtonFontSize" Value="14" />
+        <Setter Property="CancelButtonFontWeight" Value="Bold" />
 
         <!-- These are defined as attached properties -->
         <Setter Property="controls:Wizard.BackButtonTooltip" Value="Go to Previous Step" />
@@ -168,6 +195,11 @@
         <Setter Property="controls:Wizard.HelpButtonTooltip" Value="Show help on the wizard" />
         <Setter Property="controls:Wizard.HelpButtonVisibility" Value="Collapsed" />
         <Setter Property="controls:Wizard.HelpButtonIsEnabled" Value="True" />
+
+        <Setter Property="controls:Wizard.CancelButtonTitle" Value="Cancel" />
+        <Setter Property="controls:Wizard.CancelButtonTooltip" Value="Cancel the wizard execution" />
+        <Setter Property="controls:Wizard.CancelButtonVisibility" Value="Collapsed" />
+        <Setter Property="controls:Wizard.CancelButtonIsEnabled" Value="True" />
 
         <!-- Summary -->
         <Setter Property="SummaryPanelTemplate" Value="{StaticResource SummaryPanelTemplate}" />

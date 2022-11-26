@@ -32,6 +32,7 @@
         public static readonly DependencyProperty BackwardTransitionAnimationProperty = DependencyProperty.Register(nameof(BackwardTransitionAnimation), typeof(Storyboard), typeof(Wizard));
 
         public static readonly DependencyProperty HelpCommandProperty = DependencyProperty.Register(nameof(HelpCommand), typeof(ICommand), typeof(Wizard));
+        public static readonly DependencyProperty CancelCommandProperty = DependencyProperty.Register(nameof(CancelCommand), typeof(ICommand), typeof(Wizard));
         // ReSharper restore StyleCop.SA1600
 
         /// <summary>
@@ -182,6 +183,15 @@
         }
 
         /// <summary>
+        /// Gets or sets the cancel command.
+        /// </summary>
+        public ICommand CancelCommand
+        {
+            get { return (ICommand)this.GetValue(CancelCommandProperty); }
+            set { this.SetValue(CancelCommandProperty, value); }
+        }
+
+        /// <summary>
         /// Gets the transition controller.
         /// </summary>
         public TransitionController TransitionController { get; }
@@ -290,18 +300,22 @@
             this.RaisePropertyChanged(nameof(this.SkipVisibility    ));
             this.RaisePropertyChanged(nameof(this.ForwardVisibility ));
             this.RaisePropertyChanged(nameof(this.HelpVisibility    ));
+            this.RaisePropertyChanged(nameof(this.CancelVisibility  ));
             this.RaisePropertyChanged(nameof(this.BackIsEnabled     ));
             this.RaisePropertyChanged(nameof(this.SkipIsEnabled     ));
             this.RaisePropertyChanged(nameof(this.ForwardIsEnabled  ));
             this.RaisePropertyChanged(nameof(this.HelpIsEnabled     ));
+            this.RaisePropertyChanged(nameof(this.CancelIsEnabled   ));
             this.RaisePropertyChanged(nameof(this.BackTooltip       ));
             this.RaisePropertyChanged(nameof(this.SkipTooltip       ));
             this.RaisePropertyChanged(nameof(this.ForwardTooltip    ));
             this.RaisePropertyChanged(nameof(this.HelpTooltip       ));
+            this.RaisePropertyChanged(nameof(this.CancelTooltip     ));
             this.RaisePropertyChanged(nameof(this.BackTitle         ));
             this.RaisePropertyChanged(nameof(this.SkipTitle         ));
             this.RaisePropertyChanged(nameof(this.ForwardTitle      ));
             this.RaisePropertyChanged(nameof(this.HelpTitle         ));
+            this.RaisePropertyChanged(nameof(this.CancelTitle       ));
 
             base.OnSelectionChanged(e);
         }

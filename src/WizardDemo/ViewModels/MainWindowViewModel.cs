@@ -21,8 +21,9 @@
         /// </summary>
         public MainWindowViewModel()
         {
-            var unityContainer = new UnityContainer();
-            WizardSettings.Instance.ViewResolver = type => unityContainer.Resolve(type);
+            // Moved to Application_Startup, because I have made the SimpleDemoDialog the StartupUri
+            //var unityContainer = new UnityContainer();
+            //WizardSettings.Instance.ViewResolver = type => unityContainer.Resolve(type);
 
             this.StartSimpleDemoCommand = new SimpleCommand(() => this.StartDemo(new SimpleDemoDialog()));
             this.StartAdvancedDemoCommand = new SimpleCommand(() => this.StartDemo(new AdvancedDemoDialog()));
