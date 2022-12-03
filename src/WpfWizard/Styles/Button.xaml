@@ -46,6 +46,17 @@
           Data="F1 M 25.1563,23.75L 23.1563,21.75L 15.9063,14.75L 22.4063,14.75L 31.9063,23.75L 22.4063,32.75L 15.9063,32.75L 23.1563,25.75L 25.1563,23.75 Z "
           Stretch="Fill" />
 
+    <!-- A good source for paths is https://materialdesignicons.com/ -->
+    <!-- Icon check-bold -->
+    <Path x:Key="DefaultFinishIcon"
+          x:Shared="False"
+          Height="{Binding (TextElement.FontSize), RelativeSource={RelativeSource Self}}" 
+          Margin="10,2,0,0"
+          Fill="{Binding (TextElement.Foreground), RelativeSource={RelativeSource Self}}"
+          Data="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"
+          Stretch="Fill" />
+
+    <!-- Icon help -->
     <Path x:Key="DefaultHelpIcon"
           x:Shared="False"
           Height="{Binding (TextElement.FontSize), RelativeSource={RelativeSource Self}}" 
@@ -54,6 +65,7 @@
           Data="F1 M10,19H13V22H10V19M12,2C17.35,2.22 19.68,7.62 16.5,11.67C15.67,12.67 14.33,13.33 13.67,14.17C13,15 13,16 13,17H10C10,15.33 10,13.92 10.67,12.92C11.33,11.92 12.67,11.33 13.5,10.67C15.92,8.43 15.32,5.26 12,5A3,3 0 0,0 9,8H6A6,6 0 0,1 12,2Z"
           Stretch="Fill" />
 
+    <!-- Icon close-thick -->
     <Path x:Key="DefaultCancelIcon"
           x:Shared="False"
           Height="{Binding (TextElement.FontSize), RelativeSource={RelativeSource Self}}" 
@@ -225,11 +237,23 @@
                     </Border>
 
                     <ControlTemplate.Triggers>
-                        
-                        <DataTrigger Binding="{Binding ForwardButtonIcon, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" Value="{x:Null}">
+
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding ForwardButtonIcon, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" Value="{x:Null}" />
+                                <Condition Binding="{Binding IsLastStep, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" Value="false" />
+                            </MultiDataTrigger.Conditions>
                             <Setter TargetName="PART_ButtonIcon" Property="Content" Value="{StaticResource DefaultFowardIcon}" />
-                        </DataTrigger>
-                        
+                        </MultiDataTrigger>
+
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding ForwardButtonIcon, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" Value="{x:Null}" />
+                                <Condition Binding="{Binding IsLastStep, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:Wizard}}" Value="true" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="PART_ButtonIcon" Property="Content" Value="{StaticResource DefaultFinishIcon}" />
+                        </MultiDataTrigger>
+
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
