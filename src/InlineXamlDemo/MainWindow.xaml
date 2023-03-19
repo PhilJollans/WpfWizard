@@ -24,6 +24,12 @@
         <Setter Property="HorizontalAlignment" Value="Center"/>
       </Style>
 
+      <Style TargetType="CheckBox">
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="14"/>
+      </Style>
+
     </ResourceDictionary>
 
   </Window.Resources>
@@ -72,9 +78,11 @@
 
       <wiz:WizardStep wiz:Wizard.BackButtonVisibility="Collapsed" 
                       wiz:Wizard.SkipButtonVisibility="Collapsed"
+                      wiz:Wizard.ForwardButtonIsEnabled="{Binding EnableNextStepOne}"
                       >
         <Grid Background="Khaki">
           <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -94,6 +102,7 @@
             <Button Grid.Column="2" Content="Three"/>
             <Button Grid.Column="3" Content="Four"/>
           </Grid>
+          <CheckBox Grid.Row="3" Content="Enable next button" IsChecked="{Binding EnableNextStepOne}"/>
         </Grid>
       </wiz:WizardStep>
 

@@ -276,6 +276,7 @@
             foreach (WizardStep step in e.RemovedItems.OfType<WizardStep>())
             {
                 step.Summary.IsSelected = false;
+                HookOrUnhook ( step, false ) ;
             }
 
             if (e.AddedItems.Count == 0)
@@ -291,6 +292,8 @@
             {
                 return;
             }
+
+            HookOrUnhook ( selectedStep, true ) ;
 
             this.RaisePropertyChanged(nameof(this.CurrentStep));
             this.RaisePropertyChanged(nameof(this.IsFirstStep));
@@ -319,6 +322,65 @@
 
             base.OnSelectionChanged(e);
         }
+
+        private void HookOrUnhook ( WizardStep step, bool hook )
+        {
+            HookOrUnhookAttachedProperty(step, Wizard.BackButtonVisibilityProperty,    BackVisibilityChanged   , hook ) ;
+            HookOrUnhookAttachedProperty(step, Wizard.SkipButtonVisibilityProperty,    SkipVisibilityChanged   , hook ) ;
+            HookOrUnhookAttachedProperty(step, Wizard.ForwardButtonVisibilityProperty, ForwardVisibilityChanged, hook ) ;
+            HookOrUnhookAttachedProperty(step, Wizard.HelpButtonVisibilityProperty,    HelpVisibilityChanged   , hook ) ;
+            HookOrUnhookAttachedProperty(step, Wizard.CancelButtonVisibilityProperty,  CancelVisibilityChanged , hook ) ;
+            HookOrUnhookAttachedProperty(step, Wizard.BackButtonIsEnabledProperty,     BackIsEnabledChanged    , hook ) ;
+            HookOrUnhookAttachedProperty(step, Wizard.SkipButtonIsEnabledProperty,     SkipIsEnabledChanged    , hook ) ;
+            HookOrUnhookAttachedProperty(step, Wizard.ForwardButtonIsEnabledProperty,  ForwardIsEnabledChanged , hook ) ;
+            HookOrUnhookAttachedProperty(step, Wizard.HelpButtonIsEnabledProperty,     HelpIsEnabledChanged    , hook ) ;
+            HookOrUnhookAttachedProperty(step, Wizard.CancelButtonIsEnabledProperty,   CancelIsEnabledChanged  , hook ) ;
+            HookOrUnhookAttachedProperty(step, Wizard.BackButtonTooltipProperty,       BackTooltipChanged      , hook ) ;
+            HookOrUnhookAttachedProperty(step, Wizard.SkipButtonTooltipProperty,       SkipTooltipChanged      , hook ) ;
+            HookOrUnhookAttachedProperty(step, Wizard.ForwardButtonTooltipProperty,    ForwardTooltipChanged   , hook ) ;
+            HookOrUnhookAttachedProperty(step, Wizard.HelpButtonTooltipProperty,       HelpTooltipChanged      , hook ) ;
+            HookOrUnhookAttachedProperty(step, Wizard.CancelButtonTooltipProperty,     CancelTooltipChanged    , hook ) ;
+            HookOrUnhookAttachedProperty(step, Wizard.BackButtonTitleProperty,         BackTitleChanged        , hook ) ;
+            HookOrUnhookAttachedProperty(step, Wizard.SkipButtonTitleProperty,         SkipTitleChanged        , hook ) ;
+            HookOrUnhookAttachedProperty(step, Wizard.ForwardButtonTitleProperty,      ForwardTitleChanged     , hook ) ;
+            HookOrUnhookAttachedProperty(step, Wizard.HelpButtonTitleProperty,         HelpTitleChanged        , hook ) ;
+            HookOrUnhookAttachedProperty(step, Wizard.CancelButtonTitleProperty,       CancelTitleChanged      , hook ) ;
+        }
+
+        private void HookOrUnhookAttachedProperty ( WizardStep step, DependencyProperty prop, EventHandler handler, bool hook )
+        {
+            var topDescriptor = DependencyPropertyDescriptor.FromProperty(prop, typeof(WizardStep));
+            if ( hook )
+            {
+                topDescriptor.AddValueChanged(step, handler);
+            }
+            else
+            {
+                topDescriptor.RemoveValueChanged(step, handler);
+            }
+        }
+
+        private void BackVisibilityChanged    ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(BackVisibility   )) ;
+        private void SkipVisibilityChanged    ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(SkipVisibility   ));
+        private void ForwardVisibilityChanged ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(ForwardVisibility));
+        private void HelpVisibilityChanged    ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(HelpVisibility   ));
+        private void CancelVisibilityChanged  ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(CancelVisibility ));
+        private void BackIsEnabledChanged     ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(BackIsEnabled    ));
+        private void SkipIsEnabledChanged     ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(SkipIsEnabled    ));
+        private void ForwardIsEnabledChanged  ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(ForwardIsEnabled ));
+        private void HelpIsEnabledChanged     ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(HelpIsEnabled    ));
+        private void CancelIsEnabledChanged   ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(CancelIsEnabled  ));
+        private void BackTooltipChanged       ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(BackTooltip      ));
+        private void SkipTooltipChanged       ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(SkipTooltip      ));
+        private void ForwardTooltipChanged    ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(ForwardTooltip   ));
+        private void HelpTooltipChanged       ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(HelpTooltip      ));
+        private void CancelTooltipChanged     ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(CancelTooltip    ));
+        private void BackTitleChanged         ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(BackTitle        ));
+        private void SkipTitleChanged         ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(SkipTitle        ));
+        private void ForwardTitleChanged      ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(ForwardTitle     ));
+        private void HelpTitleChanged         ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(HelpTitle        ));
+        private void CancelTitleChanged       ( object sender, EventArgs e ) => RaisePropertyChanged(nameof(CancelTitle      ));
+
 
         /// <summary>
         /// Raises the <see cref="PropertyChanged"/> event.

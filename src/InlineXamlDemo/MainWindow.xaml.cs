@@ -24,6 +24,7 @@ namespace InlineXamlDemo
     public MainWindow()
     {
       InitializeComponent();
+      DataContext = new vmMainWindow() ;
     }
   }
 }
